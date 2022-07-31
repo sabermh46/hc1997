@@ -1,0 +1,135 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Josefin+Sans&family=Poppins&display=swap');
+
+/*
+    font-family: 'Hind Siliguri', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, rgb(0, 247, 255), green);
+}
+
+
+.nav-bar {
+    background: rgba(255, 255, 255, 0.728);
+    height: 100px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.269);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar .container {
+    width: 1100px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-bar .container .nav-brand {
+    border: 1px solid;
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(53, 129, 104);
+}
+.nav-bar .container .nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.nav-bar .container .nav-items .item {
+    padding: 10px 30px;
+    background: rgb(59, 160, 84);
+    font-size: 18px;
+    color: white;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.561);
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+.nav-bar .container .nav-items .item:hover {
+    background: rgb(39, 106, 55);
+}
+
+.nav-bar .container .nav-items .item.lang {
+    padding: 0;
+    height: 40px;
+    width: 80px;
+    overflow: hidden;
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 8px;
+    cursor: pointer;
+    color: black;
+}
+.nav-bar .container .nav-items .item.lang:hover {
+    background: rgb(59, 160, 84);
+}
+.nav-bar .container .nav-items .item.lang .language {
+    z-index: 2;
+    transition: 0.5s;
+}
+.nav-bar .container .nav-items .item.lang .round {
+    background: rgba(34, 84, 60, 0.741);
+    height: 36px;
+    aspect-ratio: 1;
+    border-radius: 100px;
+    position: absolute;
+    z-index: 1;
+    left: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.486);
+    transition: 0.5s;
+}
+.nav-bar .container .nav-items .item.lang.en .round {
+    left: 2px;
+}
+.nav-bar .container .nav-items .item.lang.cn .round {
+    left: calc(100% - 38px);
+}
+.nav-bar .container .nav-items .item .language.active {
+    color: white;
+    font-size: 18px;
+}
+
+
+.nav-bar .container .nav-items .item ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style-type: none;
+    background: rgb(59, 160, 84);
+    width: 100%;
+    text-align: center;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: 0.3s;
+}
+.nav-bar .container .nav-items .item ul li {
+    padding: 10px 5px;
+}
+.nav-bar .container .nav-items .item:hover ul {
+    transform: scaleY(1);
+}
+.nav-bar .container .nav-items .item ul li:hover {
+    background: rgba(0, 0, 0, 0.186);
+}
+
+
+.bg-image {
+    background-image: url("//nwzimg.wezhan.cn/contents/sitefiles2034/10171962/images/11078143.jpg");
+    height: 400px;
+    background-position: 50% 50%;
+}
