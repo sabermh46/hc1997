@@ -311,6 +311,9 @@ body {
         line-height: 30px;
     }
     
+    .footer {
+        gap: 20px;
+    }
     .footer .part:nth-child(2) {
         align-items: center;
         text-align: center;
