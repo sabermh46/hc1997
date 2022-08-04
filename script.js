@@ -12,6 +12,9 @@ window.onscroll = (e)=>{
 var langButton = document.querySelector('.nav-bar .container .nav-items .item.lang');
 var lan1 = document.querySelector('.lan1');
 var lan2 = document.querySelector('.lan2');
+
+var welText = document.querySelector('.bg-image .welcome');
+console.log(welText)
 var count = 0;
 
 langButton.addEventListener('click', ()=>{
@@ -92,8 +95,8 @@ var languages =
         ],
         headText: [
             {
-                en: '',
-                cn: '',
+                en: 'welcome To our Page',
+                cn: '欢迎来到我们的页面',
             }
         ],
         ptext: [
@@ -134,6 +137,10 @@ function toggleChinese() {
         }
     })
     parallContent.textContent = languages.ptext[0].cn;
+
+    welText.textContent = languages.headText[0].cn
+
+
 }
 
 function toggleEnglish() {
@@ -156,5 +163,8 @@ function toggleEnglish() {
     })
 
     parallContent.textContent = languages.ptext[0].en;
+
+    welText.textContent = languages.headText[0].en
+
 }
 toggleEnglish();
