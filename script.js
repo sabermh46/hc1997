@@ -2,12 +2,6 @@
 
 var body = document.querySelector('body');
 body.style.backgroundPositionY = `${ 50 }px`;
-window.onscroll = (e)=>{
-    var y = this.scrollY;
-
-    body.style.backgroundPositionY = `${ 50 - y*0.3 }px`;
-}
-
 
 var langButton = document.querySelector('.nav-bar .container .nav-items .item.lang');
 var lan1 = document.querySelector('.lan1');
@@ -54,8 +48,15 @@ var languages =
                 loc: 'https://google.com/'
             },
             {
+                en: 'Our Services',
+                cn: '消息',
+                subLinks: 0,
+                loc: 'https://google.com/'
+            },
+            {
                 en: 'About Us',
                 cn: '关于我们',
+                loc: 'https://google.com/',
                 subLinks: [
                     {
                         en: 'Link 1',
@@ -73,12 +74,6 @@ var languages =
                         loc: 'https://facebook.com/'
                     }
                 ]
-            },
-            {
-                en: 'News',
-                cn: '消息',
-                subLinks: 0,
-                loc: 'https://google.com/'
             },
             {
                 en: 'Business Scope',
@@ -122,6 +117,7 @@ var parallContent = document.querySelector('.parallax-container .content');
 function toggleChinese() {
     nav_bar.forEach((link, i)=>{
         link.textContent = languages.navBar[i].cn
+        link.setAttribute('onclick',`location.href='${ languages.navBar[i].loc }'`)
         var subLinks = languages.navBar[i].subLinks;
         if(subLinks != 0){
             var ul = document.createElement('ul')
@@ -130,7 +126,8 @@ function toggleChinese() {
                 var li = document.createElement('li');
                 ul.appendChild(li);
                 li.textContent = subLinks[j].cn;
-                li.setAttribute('onclick',`location.href='${ subLinks[j].loc}'`)
+                li.setAttribute('onclick',`location.href='${ subLinks[j].loc }'`)
+                li.style.display = 'block'
                 console.log(subLinks[j].loc);
             }
             link.appendChild(ul);
@@ -153,9 +150,14 @@ function toggleEnglish() {
             for(var j = 0; j<subLinks.length; j++)
             {
                 var li = document.createElement('li');
+                var a = document.createElement('a');
+                li.appendChild(a);
+                a.textContent = subLinks[j].en;
+                a.href = ``;
                 ul.appendChild(li);
                 li.textContent = subLinks[j].en;
                 li.setAttribute('onclick',`location.href='${ subLinks[j].loc}'`)
+                li.style.display = 'block'
                 console.log(subLinks[j].loc);
             }
             link.appendChild(ul);
@@ -168,3 +170,33 @@ function toggleEnglish() {
 
 }
 toggleEnglish();
+
+
+
+
+var cards = document.querySelectorAll('.serv-container .content-part');
+var images = document.querySelectorAll('.serv-container .image-part');
+
+var scH =  window.innerHeight;
+console.log(cards, scH);
+
+window.onscroll = (e)=>{
+
+    var y = this.scrollY;
+    body.style.backgroundPositionY = `${ 50 - y*0.3 }px`;
+
+    images.forEach((card, i) => {
+        var cInfo = card.getBoundingClientRect();
+        var cardY = cInfo.y;
+        var cardHight = cInfo.height;
+        if(cardY + cardHight/3 < scH){
+            card.classList.add('arrived');
+            cards[i].classList.add('arrived');
+        } else {
+            card.classList.remove('arrived');
+            cards[i].classList.remove('arrived');
+        }
+    })
+
+
+}
