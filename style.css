@@ -427,7 +427,6 @@ body {
         height: 70px;
         position: fixed;
         width: 100%;
-        backdrop-filter: blur(2px);
         z-index: 10000;
     }
     .nav-bar .container {
