@@ -219,9 +219,9 @@ body {
 .services {
     background: linear-gradient(50deg, rgb(66 136 68 / 80%), rgb(136 189 136 / 87%)), url(./pic/qa2.webp);
     background-size: 110%;
-    padding: 50px 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
 }
 .services h1 {
     text-align: center;
@@ -232,48 +232,53 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.499);
 }
 .services .serv-container {
-    max-width: 1250px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
-    padding: 40px;
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row wrap;
     margin-bottom: 50px;
 }
-.services .serv-container:nth-child(even){
-    flex-flow: row-reverse wrap;
-}
 .serv-container .image-part {
-    width: 56%;
-    height: 500px !important;
+    width: 70vw !important;
+    height: 600px !important;
     object-fit: cover;
     overflow: hidden;
-    transform: translateY(50px);
     transition: 1s cubic-bezier(.6,.01,.4,1.44);
     visibility: hidden;
     opacity: 0;
+    transform: translateX(-50px);
 }
 .serv-container .image-part.arrived {
-    transform: translateY(0px);
+    transform: translateX(0px);
     visibility: visible;
     opacity: 1;
 }
 .serv-container .image-part img {
-    height: inherit;
+    width: 100%;
+    height: 100%;
 }
 .serv-container .content-part {
+    position: absolute;
+    top: 50px;
+    right: 0px;
     background: white;
     padding: 40px;
-    width: 40%;
+    height: 500px !important;
+    width: 550px;
     line-height: 45px;
     font-size: 20px;
-    position: relative;
-    transform: translateY(-50px);
     transition: 0.75s cubic-bezier(.6,.01,.4,1.44);
     visibility: hidden;
     transition-delay: 0.25s;
     opacity: 0;
+}
+.serv-container:nth-child(odd) .content-part {
+    left: 0px;
+}
+.serv-container:nth-child(odd) .image-part {
+    transform: translateX(33vw);
+}
+.serv-container:nth-child(odd) .image-part.arrived {
+    transform: translateX(30vw);
 }
 .serv-container .content-part h2 {
     font-family: 'Hind Siliguri', sans-serif;
@@ -289,9 +294,14 @@ body {
 .serv-container .content-part .seeMor:hover {
     letter-spacing: 2px;
 }
-.serv-container .content-part.arrived {
+.serv-container:nth-child(odd) .content-part.arrived {
+    left: 100px;
     visibility: visible;
-    transform: translateY(-100px);
+    opacity: 1;
+}
+.serv-container .content-part.arrived {
+    right: 100px;
+    visibility: visible;
     opacity: 1;
 }
 
@@ -415,69 +425,80 @@ body {
 
     .services {
         background: linear-gradient(50deg, rgb(66 136 68 / 80%), rgb(136 189 136 / 87%)), url(./pic/qa2.webp);
-        background-size: 200%;
-        padding: 10px 0;
+        background-size: 110%;
         background-repeat: no-repeat;
         background-attachment: fixed;
+    
     }
     .services h1 {
         font-size: 35px;
-        padding: 10px;
+        padding: 20px 0 30px 0;
     }
     .services .serv-container {
-        width: calc(100% - 20px);
-        max-width: none;
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-flow: column wrap;
-    }
-    .services .serv-container:nth-child(even){
-        flex-flow: column wrap;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: 5px;
     }
     .serv-container .image-part {
-        width: 100%;
-        height: 300px !important;
+        width: 95% !important;
+        height: auto !important;
+        margin: 0 auto;
         object-fit: cover;
         overflow: hidden;
-        transform: translateY(50px);
         transition: 1s cubic-bezier(.6,.01,.4,1.44);
         visibility: hidden;
         opacity: 0;
+        transform: translateX(0);
     }
     .serv-container .image-part.arrived {
-        transform: translateY(0px);
+        transform: translateX(0);
         visibility: visible;
         opacity: 1;
     }
     .serv-container .image-part img {
-        height: inherit;
+        width: 100%;
+        height: 100%;
     }
     .serv-container .content-part {
+        position: relative;
+        top: auto;
+        right: auto;
         background: white;
+        margin: 0 auto;
         padding: 20px;
         padding-bottom: 40px;
-        width: 90%;
-        line-height: 25px;
+        height: auto !important;
+        width: 85% !important;
+        line-height: 30px;
         font-size: 15px;
-        position: relative;
-        transform: translateY(-50px);
-        transition: 0.75s cubic-bezier(.6,.01,.4,1.44);
-        visibility: hidden;
-        transition-delay: 0.25s;
-        opacity: 0;
+        transform: translateY(0px);
     }
-    .serv-container .content-part h2 {
-        font-size: 22px;
+    .serv-container:nth-child(odd) .content-part {
+        left: auto;
+    }
+    .serv-container:nth-child(odd) .image-part {
+        transform: translateX(0);
+    }
+    .serv-container:nth-child(odd) .image-part.arrived {
+        transform: translateX(0);
     }
     .serv-container .content-part .seeMor {
         right: 20px;
         bottom: 10px;
     }
-    .serv-container .content-part.arrived {
+    .serv-container .content-part .seeMor:hover {
+        letter-spacing: 2px;
+    }
+    .serv-container:nth-child(odd) .content-part.arrived {
+        left: auto;
         visibility: visible;
-        transform: translateY(-100px);
+        opacity: 1;
+    }
+    .serv-container .content-part.arrived {
+        transform: translateY(-50px);
+        right: auto;
+        visibility: visible;
         opacity: 1;
     }
 
