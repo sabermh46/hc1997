@@ -227,7 +227,7 @@ window.onscroll = (e)=>{
 
     console.log(abtUsY - scH)
     if(abtUsY - scH < 0){
-        abtUs.style.backgroundPositionY = `-${ 100 - (abtUsY - scH)*0.4 }px`;
+        abtUs.style.backgroundPositionY = `-${ 100 - (abtUsY - scH)*0.3 }px`;
     }
 
     images.forEach((card, i) => {
