@@ -8,7 +8,6 @@ var lan1 = document.querySelector('.lan1');
 var lan2 = document.querySelector('.lan2');
 
 var welText = document.querySelector('.bg-image .welcome');
-console.log(welText)
 var count = 0;
 
 langButton.addEventListener('click', ()=>{
@@ -84,7 +83,23 @@ var languages =
             {
                 en: 'Contact Us',
                 cn: '联系我们',
-                subLinks: 0,
+                subLinks: [
+                    {
+                        en: 'Link 1',
+                        cn: 'Cn SUB 1',
+                        loc: 'https://facebook.com/'
+                    },
+                    {
+                        en: 'Link 2',
+                        cn: 'Cn SUB 2',
+                        loc: 'https://facebook.com/'
+                    },
+                    {
+                        en: 'Link 3',
+                        cn: 'Cn SUB 3',
+                        loc: 'https://facebook.com/'
+                    }
+                ],
                 loc: 'https://google.com/'
             },
         ],
@@ -114,36 +129,16 @@ var nav_bar = document.querySelectorAll('.nav-items .item:not(.item.lang)');
 
 var parallContent = document.querySelector('.parallax-container .content');
 
-function toggleChinese() {
+
+
+
+function toggle_nav(){
     nav_bar.forEach((link, i)=>{
-        link.textContent = languages.navBar[i].cn
-        link.setAttribute('onclick',`location.href='${ languages.navBar[i].loc }'`)
-        var subLinks = languages.navBar[i].subLinks;
-        if(subLinks != 0){
-            var ul = document.createElement('ul')
-            for(var j = 0; j<subLinks.length; j++)
-            {
-                var li = document.createElement('li');
-                ul.appendChild(li);
-                li.textContent = subLinks[j].cn;
-                li.setAttribute('onclick',`location.href='${ subLinks[j].loc }'`)
-                li.style.display = 'block'
-                console.log(subLinks[j].loc);
-            }
-            link.appendChild(ul);
-        }
-    })
-    parallContent.textContent = languages.ptext[0].cn;
 
-    welText.textContent = languages.headText[0].cn
+        var a = document.createElement('a');
+        a.href = `${ languages.navBar[i].loc }`;
+        link.appendChild(a);
 
-
-}
-
-function toggleEnglish() {
-    nav_bar.forEach((link, i)=>{
-        link.textContent = languages.navBar[i].en
-        link.setAttribute('onclick',`location.href='${ languages.navBar[i].loc }'`)
         var subLinks = languages.navBar[i].subLinks;
         if(subLinks != 0){
             var ul = document.createElement('ul')
@@ -151,18 +146,58 @@ function toggleEnglish() {
             {
                 var li = document.createElement('li');
                 var a = document.createElement('a');
-                li.appendChild(a);
-                a.textContent = subLinks[j].en;
-                a.href = ``;
+                a.href = `${ subLinks[j].loc}`;
+                a.classList.add('subAlink');
+                li.appendChild(a)
                 ul.appendChild(li);
-                li.textContent = subLinks[j].en;
-                li.setAttribute('onclick',`location.href='${ subLinks[j].loc}'`)
-                li.style.display = 'block'
-                console.log(subLinks[j].loc);
             }
             link.appendChild(ul);
         }
     })
+}
+
+toggle_nav();
+
+var nav_bar_link = document.querySelectorAll('.item > a');
+
+function toggleChinese() {
+
+    nav_bar_link.forEach((nLink, i)=>{
+        nLink.textContent = languages.navBar[i].cn
+    })
+
+    parallContent.textContent = languages.ptext[0].cn;
+
+    welText.textContent = languages.headText[0].cn
+
+
+}
+
+
+var subA = document.querySelectorAll(`.subAlink`);
+console.log(subA)
+
+function toggleEnglish() {
+
+    nav_bar_link.forEach((nLink, i)=>{
+        nLink.textContent = languages.navBar[i].en
+    })
+
+    var index = 0;
+    nav_bar.forEach((link, i)=>{
+
+        var subLinks = languages.navBar[i].subLinks;
+        if(subLinks != 0){
+            for(var k=0; k<subLinks.length; k++)
+            {
+                subA[index].textContent = subLinks[k].en
+                index++;
+            }
+        }
+
+    })
+
+    
 
     parallContent.textContent = languages.ptext[0].en;
 
@@ -178,7 +213,6 @@ var cards = document.querySelectorAll('.serv-container .content-part');
 var images = document.querySelectorAll('.serv-container .image-part');
 
 var scH =  window.innerHeight;
-console.log(cards, scH);
 
 window.onscroll = (e)=>{
 

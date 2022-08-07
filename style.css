@@ -59,7 +59,12 @@ body {
     gap: 15px;
 }
 .nav-bar .container .nav-items .item:not(.item.lang) {
+    position: relative;
+}
+.nav-bar .container .nav-items .item:not(.item.lang) > a {
     padding: 10px 15px;
+    text-decoration: none;
+    display: block;
     background: rgb(59, 160, 84);
     font-size: 18px;
     color: white;
@@ -67,10 +72,10 @@ body {
     transition: 0.3s;
     cursor: pointer;
     position: relative;
-    min-width: 120px;
+    min-width: 120px !important;
     text-align: center;
 }
-.nav-bar .container .nav-items .item:hover:not(.item.lang) {
+.nav-bar .container .nav-items .item:not(.item.lang) > a:hover {
     background: rgb(39, 106, 55);
 }
 
@@ -127,17 +132,24 @@ body {
     background: rgb(59, 160, 84);
     width: 100%;
     text-align: center;
-    transform: scaleY(0);
+    transform: translateY(50px);
+    visibility: hidden;
+    opacity: 0;
     transform-origin: top center;
     transition: 0.3s;
 }
-.nav-bar .container .nav-items .item ul li {
+.nav-bar .container .nav-items .item ul li > a {
+    display: block;
     padding: 10px 5px;
+    text-decoration: none;
+    color: white;
 }
 .nav-bar .container .nav-items .item:hover ul {
+    visibility: visible;
     transform: scaleY(1);
+    opacity: 1;
 }
-.nav-bar .container .nav-items .item ul li:hover {
+.nav-bar .container .nav-items .item ul li > a:hover {
     background: rgba(0, 0, 0, 0.186);
 }
 
@@ -272,6 +284,7 @@ body {
     text-decoration: none;
     color: rgb(35, 111, 63);
     transition: 0.25s;
+    bottom: 10px;
 }
 .serv-container .content-part .seeMor:hover {
     letter-spacing: 2px;
