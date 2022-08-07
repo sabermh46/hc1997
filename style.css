@@ -7,6 +7,9 @@
     font-family: 'Josefin Sans', sans-serif;
     font-family: 'Poppins', sans-serif;
 */
+html {
+    scroll-behavior: smooth;
+}
 
 * {
     padding: 0;

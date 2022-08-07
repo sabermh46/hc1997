@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <div class="services">
+    <div class="services" id="services">
         <h1>Our Services</h1>
         <div class="serv-container">
             <div class="image-part">
@@ -84,9 +84,142 @@
         </div>
     </div>
 
+    <div class="about_us" id="about_us">
+        <h1>About us &rarr;</h1>
+        <h2>Who we are?</h2>
+        <div class="abtUs">
+
+            <div class="pic-group">
+                <img src="./pic/qa3.jpg" alt="" class="pic">
+                <img src="./pic/qa.jpg" alt="" class="pic">
+                <img src="./pic/qa2.webp" alt="" class="pic">
+                <img src="./pic/pl.jpg" alt="" class="pic">
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="contact_us" id="contact_us">
+        <h1>Contact Us &phone;</h1>
+
+        <a href="https://wa.me/+8801710590525/" class="wa-icon">
+            <div>
+                <img src="./pic/wa.jpg" alt="">
+                <p>01710590525</p>
+            </div>
+        </a>
+
+    </div>
+    
 
     <style>
         
+        .about_us {
+            background: linear-gradient(51deg, transparent, rgba(0, 0, 0, 0.59)), url(./pic/aboutbg.jpg);
+            background-size: 130%;
+            background-attachment: fixed;
+            padding: 0 100px;
+            background-repeat: no-repeat;
+            padding-bottom: 100px;
+        }
+        .about_us h1 {
+            padding: 5px  20px;
+            color: rgb(171, 236, 161);
+            text-shadow: -1px 1px 20px #0000004a;
+            width: min-content;
+            white-space: nowrap;
+            font-size: 90px;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            background: rgba(69, 123, 102, 0.851);
+        }
+        .about_us h2 {
+            padding: 10px 10px;
+            padding-top: 30px;
+            color: rgb(223, 255, 209);
+            text-shadow: -1px 1px 20px #0000004a;
+            font-size: 60px;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+        }
+        .abtUs {
+            display: grid;
+            place-items: center;
+        }
+        .abtUs .pic-group {
+            max-height: 700px;
+            max-width: 800px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+        .pic-group .pic {
+            width: 350px;
+            aspect-ratio: 1.167;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+        .pic-group .pic:nth-child(1) {
+            border-top-left-radius: 40px;
+        }
+        .pic-group .pic:nth-child(2) {
+            border-top-right-radius: 40px;
+        }
+        .pic-group .pic:nth-child(3) {
+            border-bottom-left-radius: 40px;
+            justify-self: flex-start;
+        }
+        .pic-group .pic:nth-child(4) {
+            border-bottom-right-radius: 40px;
+        }
+
+        .contact_us {
+            background: rgb(190, 211, 196);
+            padding: 0 100px;
+        }
+        .contact_us h1 {
+            padding: 5px  20px;
+            color: rgb(52, 74, 49);
+            text-shadow: -1px 1px 20px #0000004a;
+            width: min-content;
+            white-space: nowrap;
+            font-size: 70px;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+        }
+
+        .wa-icon {
+            height: 70px;
+            display: block;
+            width: min-content;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 15px;
+            background: rgb(23, 176, 92);
+        }
+        .wa-icon div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+        }
+        .wa-icon div img {
+            width: 50px;
+            object-fit: cover;
+            border-radius: 10px;
+
+        }
+        
+        .wa-icon div p {
+            font-size: 25px;
+            color: aliceblue;
+        }
         
     </style>
 

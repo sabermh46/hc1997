@@ -1,7 +1,11 @@
 
 
 var body = document.querySelector('body');
+var abtUs = document.querySelector('.about_us');
+
 body.style.backgroundPositionY = `${ 50 }px`;
+abtUs.style.backgroundPositionY = `${ 100 }px`;
+
 
 var langButton = document.querySelector('.nav-bar .container .nav-items .item.lang');
 var lan1 = document.querySelector('.lan1');
@@ -50,12 +54,12 @@ var languages =
                 en: 'Our Services',
                 cn: '消息',
                 subLinks: 0,
-                loc: 'https://google.com/'
+                loc: '#services'
             },
             {
                 en: 'About Us',
                 cn: '关于我们',
-                loc: 'https://google.com/',
+                loc: '#about_us',
                 subLinks: [
                     {
                         en: 'Link 1',
@@ -83,24 +87,8 @@ var languages =
             {
                 en: 'Contact Us',
                 cn: '联系我们',
-                subLinks: [
-                    {
-                        en: 'Link 1',
-                        cn: 'Cn SUB 1',
-                        loc: 'https://facebook.com/'
-                    },
-                    {
-                        en: 'Link 2',
-                        cn: 'Cn SUB 2',
-                        loc: 'https://facebook.com/'
-                    },
-                    {
-                        en: 'Link 3',
-                        cn: 'Cn SUB 3',
-                        loc: 'https://facebook.com/'
-                    }
-                ],
-                loc: 'https://google.com/'
+                subLinks: 0,
+                loc: '#contact_us'
             },
         ],
         headText: [
@@ -160,10 +148,26 @@ toggle_nav();
 
 var nav_bar_link = document.querySelectorAll('.item > a');
 
+var subA = document.querySelectorAll(`.subAlink`);
+
 function toggleChinese() {
 
     nav_bar_link.forEach((nLink, i)=>{
         nLink.textContent = languages.navBar[i].cn
+    })
+
+    var index = 0;
+    nav_bar.forEach((link, i)=>{
+
+        var subLinks = languages.navBar[i].subLinks;
+        if(subLinks != 0){
+            for(var k=0; k<subLinks.length; k++)
+            {
+                subA[index].textContent = subLinks[k].cn
+                index++;
+            }
+        }
+
     })
 
     parallContent.textContent = languages.ptext[0].cn;
@@ -174,8 +178,7 @@ function toggleChinese() {
 }
 
 
-var subA = document.querySelectorAll(`.subAlink`);
-console.log(subA)
+
 
 function toggleEnglish() {
 
@@ -218,6 +221,14 @@ window.onscroll = (e)=>{
 
     var y = this.scrollY;
     body.style.backgroundPositionY = `${ 50 - y*0.3 }px`;
+
+    var abtUsInfo = abtUs.getBoundingClientRect();
+    var abtUsY = abtUsInfo.y
+
+    console.log(abtUsY - scH)
+    if(abtUsY - scH < 0){
+        abtUs.style.backgroundPositionY = `-${ 100 - (abtUsY - scH)*0.4 }px`;
+    }
 
     images.forEach((card, i) => {
         var cInfo = card.getBoundingClientRect();
