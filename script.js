@@ -48,7 +48,7 @@ var languages =
                 en: 'Front Page',
                 cn: '首页',
                 subLinks: 0,
-                loc: 'https://google.com/'
+                loc: '#'
             },
             {
                 en: 'Our Services',
@@ -143,6 +143,13 @@ function toggle_nav(){
         }
     })
 }
+
+nav_bar.forEach((link, i)=>{
+    link.onclick = ()=>{
+        sideNav.classList.toggle('active');
+        mobileButton.classList.toggle('active');
+    }
+})
 
 toggle_nav();
 
