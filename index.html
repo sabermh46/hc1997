@@ -50,61 +50,95 @@
         </div>
     </div>
 
+    <div class="services" id="services">
+        <h1>Our Services</h1>
+    </div>
+
     <div class="about_us" id="about_us">
         <h1>About us</h1>
         <div class="abtUs">
 
             <div class="company-name">
-                Shentang Transsion Holdings Limited
+                <p>Shentang Transsion Holdings Limited</p>
                 <div class="established">
-                    Est. August 20, 2013
+                    Est. 2013
+                </div>
+                <div class="company-address">
+                    Road No #23, House No #456, Selected City, Selected State
+                </div> 
+            </div>
+
+            <div class="company-type">
+                <p>
+                    Enterprise type Co., Ltd. (Sino-foreign association, listed) <br> organization contract code
+                    <span class='company-code'>07692463X</span>
+                </p>
+                <div class="abtCard">
+                    <div class="head">
+                        Number of people
+                    </div>
+                    <div class="body">
+                        545
+                    </div>
+                </div>
+                <div class="abtCard">
+                    <div class="head">
+                        registered capital
+                    </div>
+                    <div class="body">
+                        801,690,95 Million RMB
+                    </div>
                 </div>
             </div>
 
-            <div class="abtCard">
-                <div class="head">
-                    Number of people
-                </div>
-                <div class="body">
-                    545
-                </div>
-            </div>
-            <div class="abtCard">
-                <div class="head">
-                    registered capital
-                </div>
-                <div class="body">
-                    801,690,95 Million RMB
+            <div class="features">
+                <h3>features</h3>
+                <div class="features_list">
+                    <div>Technology development and technical consultation of mobile Internet and mobile phone software</div>
+                    <div>Innovation and development of electronic products</div>
+                    <div>Import and export and related wealth distribution business (excluding state-owned sudden and easy-to-manage commodities</div>
+                    <div>Import and export requirements</div>
+                    <div>License management and other specialties</div>
+                    <div>For democratically managed commodities, applications shall be processed in accordance with the relevant regulations of the four countries)</div>
+                    <div>The licensed project is: Ouqihui</div>
                 </div>
             </div>
+
+            
             
         </div>
         <style>
             .company-name {
                 width: 100%;
-                font-size: 40px;
-                color: white;
+                font-size: 210%;
+                color: rgb(24, 80, 88);
                 font-weight: 900;
-                letter-spacing: 5px;
+                letter-spacing: 3px;
+                text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.203); 
             }
             .company-name .established {
-                font-size: 30px;
-                color: rgb(225, 225, 225);
-                font-weight: 500;
+                font-size: 70%;
+                color: rgb(94, 126, 62);
+                font-weight: 900;
                 letter-spacing: 3px;
+                text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.203); 
+            }
+            .company-address {
+                font-size: 50%;
+                letter-spacing: 2px;
             }
             .abtCard {
                 position: relative;
-                background: rgba(15, 122, 15, 0.834);
+                background: rgba(25, 56, 25, 0.276);
                 overflow: hidden;
                 border-radius: 10px;
             }
             .abtCard .head {
                 padding: 15px 35px;
-                background: rgba(2, 174, 2, 0.784);
+                background: rgba(17, 83, 17, 0.265);
                 text-align: center;
                 font-size: 22px;
-                color: antiquewhite;
+                color: rgba(3, 14, 2, 0.432);
                 text-transform: capitalize;
             }
             .abtCard .body {
@@ -112,16 +146,66 @@
                 font-size: 40px;
                 font-weight: 700;
                 padding: 15px 10px;
-                color: rgb(189, 255, 189);
+                color: rgba(10, 49, 10, 0.508);
             }
+            .company-type {
+                color: rgb(22, 74, 28);
+                font-size: 120%;
+                font-weight: 600;
+                letter-spacing: 1px;
+                width: 48%;
+                min-width: 400px;
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-between;
+                gap: 15px;
+            }
+            .company-code {
+                color: rgb(20, 138, 59);
+            }
+            .features {
+                border-left: 3px solid rgba(39, 105, 65, 0.586);
+                border-radius: 3px;
+                width: 48%;
+                position: relative;
+                padding-left: 20px;
+            }
+            .features h3 {
+                text-transform: uppercase;
+                font-size: 150%;
+            }
+            .features_list {
+                list-style-type: none;
+                width: 100%;
+                padding-left: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                position: relative;
+            }
+            .features_list div {
+                position: relative;
+                width: 100%;
+                padding: 5px 0px;
+                font-size: 120%;
+            }
+            .features_list div::before {
+                content: '';
+                width: 10px;
+                aspect-ratio: 2.5;
+                border-left: 4px solid rgb(61, 88, 43);
+                border-bottom: 4px solid rgb(61, 88, 43);
+                position: absolute;
+                transform: rotate(-45deg);
+                left: -20px;
+                top: 14px;
+            }
+
         </style>
 
 
     </div>
 
-    <div class="services" id="services">
-        <h1>Our Services</h1>
-    </div>
 
     
 
