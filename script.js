@@ -106,6 +106,105 @@ var languages =
             我司行业经验丰富，业绩优良稳定，作业规范，信誉良好。与各大金融机构合作多年，接受各合作方的相关业务培训和指导，对金融外包业务的管理和要求较为熟悉。公司凭借多年的努力和发展，荣幸获得各大合作方的好评和嘉奖，包括多项“年度战略合作伙伴”、“核心战略合作伙伴”、“卓越贡献奖”、“优秀合作机构”、“核心委外机构”等荣誉奖项\
     浩传公司将一如既往地竭诚为各合作方提供优质、安全、高效、规范和稳定的服务，与各合作方携手共创合作共赢的未来!',
             }
+        ],
+
+        our_services: [
+            {
+                image: 'https://www.intouch-quality.com/hubfs/quality-defects-ft-lg.jpg',
+                heading: {
+                    en: 'Customer inspection',
+                    cn: '客户验货'
+                },
+                body: {
+                    en: 'Inspection of materials, semi-finished products and finished products of mobile phones, computers, tablets, watches, TV dramas and other electronic products (full inspection, AQL sampling inspection, and customer demand inspection can be performed according to customer requirements), and provide inspection reports.',
+                    cn: '手机、电脑、平板、手表、电视剧等电子产品的物料、半成品、成品验货（按照客户要求可以全检、AQL抽检、客户需求检验），提供验货报告。'
+                },
+                button: {
+                    en: 'See More',
+                    cn: 'See More',
+                    loc: ''
+                }
+            },
+            {
+                image: 'https://reciprocity.com/wp-content/uploads/2021/06/resource_audit-procedures-internal-controls_featured-img_730x270.jpg',
+                heading: {
+                    en: 'Material re-judgment',
+                    cn: '物料复判'
+                },
+                body: {
+                    en: 'Electronic products three-in-one, screens, motherboards, electro-acoustic devices, housings and other defective materials will be re-judged according to customer needs, and a review report will be provided',
+                    cn: '电子产品三合一、屏、主板、电声器件、壳体等不良品物料根据客户需求进行复判，提供复判报告'
+                },
+                button: {
+                    en: 'See More',
+                    cn: 'See More',
+                    loc: ''
+                }
+            },
+            {
+                image: 'https://thumbs.dreamstime.com/b/exception-handling-form-binary-code-d-illustration-84207111.jpg',
+                heading: {
+                    en: 'exception handling',
+                    cn: '异常处理'
+                },
+                body: {
+                    en: 'Assist the supplier to confirm, analyze and handle the abnormality related to electronic products. (Provide abnormal information, assist in analysis, verify improvement effect, screen and process materials, etc.)',
+                    cn: '电子产品相关异常协助供应商确认、协助分析、处理。（提供异常相关信息、协助分析、验证改善效果，对物料进行筛选、加工等）'
+                },
+                button: {
+                    en: 'See More',
+                    cn: 'See More',
+                    loc: ''
+                }
+            },
+            {
+                image: 'https://www.profitableventure.com/wp-content/uploads/2022/03/Step-6-Secure-a-Location-and-Hire-Drivers.jpg',
+                heading: {
+                    en: 'transportation',
+                    cn: '运输'
+                },
+                body: {
+                    en: 'Relevant materials and products can be safely transported.',
+                    cn: '可以安全运输相关物料、产品。'
+                },
+                button: {
+                    en: 'See More',
+                    cn: 'See More',
+                    loc: ''
+                }
+            },
+            {
+                image: 'https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/uploads/job_description_template/Warehouse_Worker.jpg=ws720x480',
+                heading: {
+                    en: 'Warehousing',
+                    cn: '仓储'
+                },
+                body: {
+                    en: 'Can assist customers to store related materials and products. (safe, convenient, fast, meet the environmental requirements of electronic products)',
+                    cn: '可以协助客户存储相关物料、产品。（安全、方便、快捷、满足电子产品环境要求）'
+                },
+                button: {
+                    en: 'See More',
+                    cn: 'See More',
+                    loc: ''
+                }
+            },
+            {
+                image: 'https://www.profolus.com/wp-content/uploads/2019/02/Examples-and-types-of-after-sales-service.jpg',
+                heading: {
+                    en: 'After-sales and maintenance',
+                    cn: '售后、维修'
+                },
+                body: {
+                    en: 'Complete after-sales maintenance of electronic products, semi-finished products, motherboards, three-in-one, and other valuable materials.',
+                    cn: '完成电子产品成品、半成品、主板、三合一、等贵重物料的售后维修。'
+                },
+                button: {
+                    en: 'See More',
+                    cn: 'See More',
+                    loc: ''
+                }
+            }
         ]
     }
 
@@ -117,10 +216,12 @@ var nav_bar = document.querySelectorAll('.nav-items .item:not(.item.lang)');
 
 var parallContent = document.querySelector('.parallax-container .content');
 
-
+var services = document.getElementById('services');
 
 
 function toggle_nav(){
+
+
     nav_bar.forEach((link, i)=>{
 
         var a = document.createElement('a');
@@ -142,6 +243,29 @@ function toggle_nav(){
             link.appendChild(ul);
         }
     })
+
+        var servLen = languages.our_services.length;
+    console.log(servLen)
+        for(var s=0; s<servLen; s++)
+        {
+            var serv_container = document.createElement('div');
+            serv_container.classList.add('serv-container')
+            var content = languages.our_services[s];
+            serv_container.innerHTML = `
+            <div class='image-part'>
+            <img src='${ content.image }' alt='${ content.heading.en } Image'>
+            </div>
+            <div class='content-part'>
+                <h2>${ true } </h2>
+                <p>${ true }</p>
+                <a class='seeMor' href="#">${ true }</a>
+            </div>
+            `
+            services.appendChild(serv_container)
+        }
+
+
+
 }
 
 nav_bar.forEach((link, i)=>{
@@ -157,34 +281,10 @@ var nav_bar_link = document.querySelectorAll('.item > a');
 
 var subA = document.querySelectorAll(`.subAlink`);
 
-function toggleChinese() {
-
-    nav_bar_link.forEach((nLink, i)=>{
-        nLink.textContent = languages.navBar[i].cn
-    })
-
-    var index = 0;
-    nav_bar.forEach((link, i)=>{
-
-        var subLinks = languages.navBar[i].subLinks;
-        if(subLinks != 0){
-            for(var k=0; k<subLinks.length; k++)
-            {
-                subA[index].textContent = subLinks[k].cn
-                index++;
-            }
-        }
-
-    })
-
-    parallContent.textContent = languages.ptext[0].cn;
-
-    welText.textContent = languages.headText[0].cn
-
-
-}
-
-
+var OS_heading = document.querySelectorAll('.serv-container > .content-part > h2');
+var OS_body = document.querySelectorAll('.serv-container > .content-part > p');
+var OS_button = document.querySelectorAll('.serv-container > .content-part > .seeMor');
+var OS_image = document.querySelectorAll('.serv-container > .image-part > img');
 
 
 function toggleEnglish() {
@@ -213,8 +313,63 @@ function toggleEnglish() {
 
     welText.textContent = languages.headText[0].en
 
+    var servLen = languages.our_services.length;
+
+    var content = languages.our_services[0];
+    
+    OS_heading.forEach((head, i)=>{
+        var content = languages.our_services[i];
+        head.textContent = content.heading.en
+        OS_body[i].textContent = content.body.en
+        OS_button[i].textContent = content.button.en
+        OS_button[i].innerHTML += ' &rarr;'
+    })
+
+
+
+
 }
 toggleEnglish();
+
+function toggleChinese() {
+
+    nav_bar_link.forEach((nLink, i)=>{
+        nLink.textContent = languages.navBar[i].cn
+    })
+
+    var index = 0;
+    nav_bar.forEach((link, i)=>{
+
+        var subLinks = languages.navBar[i].subLinks;
+        if(subLinks != 0){
+            for(var k=0; k<subLinks.length; k++)
+            {
+                subA[index].textContent = subLinks[k].cn
+                index++;
+            }
+        }
+
+    })
+
+    parallContent.textContent = languages.ptext[0].cn;
+
+    welText.textContent = languages.headText[0].cn
+
+    OS_heading.forEach((head, i)=>{
+        var content = languages.our_services[i];
+        head.textContent = content.heading.cn
+        OS_body[i].textContent = content.body.cn
+        OS_button[i].textContent = content.button.cn
+        OS_button[i].innerHTML += ' &rarr;';
+    })
+
+
+}
+
+
+
+
+
 
 
 
@@ -232,7 +387,6 @@ window.onscroll = (e)=>{
     var abtUsInfo = abtUs.getBoundingClientRect();
     var abtUsY = abtUsInfo.y
 
-    console.log(abtUsY - scH)
     if(abtUsY - scH < 0){
         abtUs.style.backgroundPositionY = `-${ 100 - (abtUsY - scH)*0.3 }px`;
     }
