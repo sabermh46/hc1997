@@ -103,7 +103,105 @@ var languages =
             cn: 'Limpid 公司于（2022年6月18日）在（address）注册成立，公司主要为孟加拉国内外各大电子产品公司提供手机、电脑、平板、电子手表、电视机等产品的第三方验货、物料复判、异常处理、物料、半成品、成品的运输、仓储，售后维修等专业的服务；凭借良好的声誉和专业优势公司与国内外多家大型公司、跨国公司建立良好的合作关系\；我司各项资质齐全，已申请并通过了（Qualifications and Certificates Obtained），这标志着我司的运行体系已经符合行业的国际标准要求，同时也是我司对客户提供完美服务的有效保证；公司服务区域包括孟加拉国所有区域、印度区域；公司设立了各类功能完善的职能部门，为所有合作企业提供高效专业的服务。',
             }
         ],
+        aboutUs: [
+            {
+                head: {
+                    en: 'About us',
+                    cn: '关于我们'
+                },
+                companyName: {
+                    en: 'Shentang Transsion Holdings Limited',
+                    cn: '深塘传音控股有限公司'
+                },
+                established: {
+                    en: 'August 20, 2013',
+                    cn: '2013年08月20日'
+                },
+                companyAddress: {
+                    en: 'Road No #23, House No #456, Selected City, Selected State',
+                    cn: 'Road No #23, House No #456, Selected City, Selected State'
+                },
+                companyType: {
+                    type: [
+                        {
+                            en: 'Enterprise type Co., Ltd. (Sino-foreign association, listed) ',
+                            cn: '企业类型 股份有限公司(中外会类、上市)'
+                        },
+                        {
+                            en: 'Organization contract code',
+                            cn: '组织机约代码'
+                        }
+                    ],
+                    companyCode: {
+                        en: '07692463X',
+                        cn: '07692463X',
+                    }
+                },
+                abtCard: {
+                    card: [
+                        {
+                            head: {
+                                en: 'Number of people',
+                                cn: '人数'
+                            },
+                            body: {
+                                en: '545',
+                                cn: '五百四十五'
+                            },
+                        },
+                        {
+                            head: {
+                                en: 'Registered capital',
+                                cn: '注册资本'
+                            },
+                            body: {
+                                en: '801,690,95 Million RMB',
+                                cn: '8016.9095亿元人民币'
+                            },
+                        }
+                    ]
+                },
+                features: {
+                    head: {
+                        en: 'features',
+                        cn: '特征'
+                    },
+                    featureList: [
+                        {
+                            en: 'Technology development and technical consultation of mobile Internet and mobile phone software',
+                            cn: '移动互联网和手机软件的技术开发和技术咨询'
+                        },
+                        {
+                            en: 'Innovation and development of electronic products',
+                            cn: '电子产品的创新与发展'
+                        },
+                        {
+                            en: 'Import and export and related wealth distribution business (excluding state-owned sudden and easy-to-manage commodities',
+                            cn: '进出口及相关财富分配业务（不含国有突发性易管理商品）'
+                        },
+                        {
+                            en: 'Import and export requirements',
+                            cn: '进出口要求'
+                        },
+                        {
+                            en: 'License management and other specialties',
+                            cn: '许可证管理和其他专业'
+                        },
+                        {
+                            en: 'For democratically managed commodities, applications shall be processed in accordance with the relevant (regulations of the four countries)',
+                            cn: '民主管理商品，按有关（四国规定）办理申请'
+                        },
+                        {
+                            en: 'The licensed project is: Ouqihui',
+                            cn: '授权项目为：欧启辉'
+                        },
+                    ],
 
+                },
+            },
+            
+
+        ],
         our_services: [
             {
                 image: 'https://www.intouch-quality.com/hubfs/quality-defects-ft-lg.jpg',
@@ -214,6 +312,8 @@ var parallContent = document.querySelector('.parallax-container .content');
 
 var services = document.getElementById('services');
 
+var aboutUs = document.querySelector('#about_us .abtUs')
+
 
 function toggle_nav(){
 
@@ -260,7 +360,72 @@ function toggle_nav(){
             services.appendChild(serv_container)
         }
 
+        var com_name = document.createElement('div');
+        com_name.classList.add('company-name')
+        com_name.innerHTML = `
+                <p>${ true }</p>
+                <div class="established">
+                ${ true }
+                </div>
+                <div class="company-address">
+                ${ true }
+                </div>
+        `
 
+
+
+
+        var companyType = document.createElement('div');
+        companyType.classList.add('company-type');
+        companyType.innerHTML = `<div>
+                <p> ${ true }</p>
+                    <p> ${ true }</p>
+                    <span class='company-code'>${ true }</span>
+                    </div>
+        `
+
+        var abtCardlen = languages.aboutUs[0].abtCard.card.length;
+
+        for(var i=0; i<abtCardlen; i++)
+        {
+            var abtCard = document.createElement('div');
+            abtCard.classList.add('abtCard');
+            abtCard.innerHTML = `
+                    <div class="head">
+                    ${ true }
+                    </div>
+                    <div class="body">
+                        ${ true }
+                    </div>
+            `
+
+            companyType.appendChild(abtCard);
+        }
+        console.log(companyType)
+
+        var features = document.createElement('div');
+        features.classList.add('features')
+        var h3 = document.createElement('h3');
+        features.appendChild(h3);
+
+        var featuresList = document.createElement('div');
+        featuresList.classList.add('features_list');
+        var feaLen = languages.aboutUs[0].features.featureList.length
+        for(var i=0; i<feaLen; i++)
+        {
+            featuresList.innerHTML += `<div>${true}</div>`
+        }
+
+        features.appendChild(featuresList)
+
+
+
+
+        aboutUs.appendChild(com_name)
+        aboutUs.appendChild(companyType)
+        aboutUs.appendChild(features);
+
+        console.log(aboutUs)
 
 }
 
@@ -281,6 +446,21 @@ var OS_heading = document.querySelectorAll('.serv-container > .content-part > h2
 var OS_body = document.querySelectorAll('.serv-container > .content-part > p');
 var OS_button = document.querySelectorAll('.serv-container > .content-part > .seeMor');
 var OS_image = document.querySelectorAll('.serv-container > .image-part > img');
+
+var lanAbUs0 = languages.aboutUs[0];
+var ab_head = document.querySelector('.about_us h1')
+var c_name = document.querySelector('.abtUs .company-name p');
+var c_est = document.querySelector('.abtUs .company-name .established');
+var c_add = document.querySelector('.abtUs .company-name .company-address');
+var c_part2 = document.querySelectorAll('.abtUs .company-type div p');
+var c_code = document.querySelector('.company-code');
+var c_cards_head = document.querySelectorAll('.abtCard .head');
+var c_cards_body = document.querySelectorAll('.abtCard .body');
+var c_fea = document.querySelector('.features h3');
+var c_fea_list = document.querySelectorAll('.features_list div');
+
+
+
 
 
 function toggleEnglish() {
@@ -321,6 +501,27 @@ function toggleEnglish() {
         OS_button[i].innerHTML += ' &rarr;'
     })
 
+    
+
+    ab_head.textContent = lanAbUs0.head.en
+    c_name.textContent = lanAbUs0.companyName.en
+    c_est.textContent = lanAbUs0.established.en
+    c_add.textContent = lanAbUs0.companyAddress.en
+    c_code.textContent = lanAbUs0.companyType.companyCode.en
+    c_part2.forEach((cpart, i)=>{
+        cpart.textContent = lanAbUs0.companyType.type[i].en
+    })
+    c_cards_head.forEach((chead, c)=>{
+        chead.textContent = lanAbUs0.abtCard.card[c].head.en
+    })
+    c_cards_body.forEach((cbody, c)=>{
+        cbody.textContent = lanAbUs0.abtCard.card[c].body.en
+    })
+    c_fea.textContent = lanAbUs0.features.head.en
+    c_fea_list.forEach((f_list, f)=>{
+        f_list.textContent = lanAbUs0.features.featureList[f].en
+    })
+
 
 
 
@@ -357,6 +558,26 @@ function toggleChinese() {
         OS_body[i].textContent = content.body.cn
         OS_button[i].textContent = content.button.cn
         OS_button[i].innerHTML += ' &rarr;';
+    })
+
+
+    ab_head.textContent = lanAbUs0.head.cn
+    c_name.textContent = lanAbUs0.companyName.cn
+    c_est.textContent = lanAbUs0.established.cn
+    c_add.textContent = lanAbUs0.companyAddress.cn
+    c_code.textContent = lanAbUs0.companyType.companyCode.cn
+    c_part2.forEach((cpart, i)=>{
+        cpart.textContent = lanAbUs0.companyType.type[i].cn
+    })
+    c_cards_head.forEach((chead, c)=>{
+        chead.textContent = lanAbUs0.abtCard.card[c].head.cn
+    })
+    c_cards_body.forEach((cbody, c)=>{
+        cbody.textContent = lanAbUs0.abtCard.card[c].body.cn
+    })
+    c_fea.textContent = lanAbUs0.features.head.cn
+    c_fea_list.forEach((f_list, f)=>{
+        f_list.textContent = lanAbUs0.features.featureList[f].cn
     })
 
 
