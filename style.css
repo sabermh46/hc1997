@@ -396,6 +396,11 @@ body {
     font-weight: 700;
     padding: 15px 10px;
     color: rgba(10, 49, 10, 0.508);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 .company-type {
     color: rgb(22, 74, 28);

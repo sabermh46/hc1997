@@ -145,8 +145,11 @@ var languages =
                                 cn: '人数'
                             },
                             body: {
-                                en: '545',
-                                cn: '五百四十五'
+                                numTarget: '547',
+                                unit: {
+                                    en: '',
+                                    cn: ''
+                                }
                             },
                         },
                         {
@@ -155,8 +158,11 @@ var languages =
                                 cn: '注册资本'
                             },
                             body: {
-                                en: '801,690,95 Million RMB',
-                                cn: '8016.9095亿元人民币'
+                                numTarget: '80169095',
+                                unit: {
+                                    en: 'Million RMB',
+                                    cn: '亿元人民币'
+                                }
                             },
                         }
                     ]
@@ -392,10 +398,10 @@ function toggle_nav(){
             abtCard.classList.add('abtCard');
             abtCard.innerHTML = `
                     <div class="head">
-                    ${ true }
                     </div>
                     <div class="body">
-                        ${ true }
+                        <div class="counter-anim" data-target="${ true }"></div>
+                        <div class="unit">${ true }</div>
                     </div>
             `
 
@@ -455,11 +461,16 @@ var c_add = document.querySelector('.abtUs .company-name .company-address');
 var c_part2 = document.querySelectorAll('.abtUs .company-type div p');
 var c_code = document.querySelector('.company-code');
 var c_cards_head = document.querySelectorAll('.abtCard .head');
-var c_cards_body = document.querySelectorAll('.abtCard .body');
+var c_cards_body = document.querySelectorAll('.abtCard .body .unit');
+var c_cards_count = document.querySelectorAll('.abtCard .body .counter-anim');
 var c_fea = document.querySelector('.features h3');
 var c_fea_list = document.querySelectorAll('.features_list div');
 
 
+
+c_cards_count.forEach((count, c)=>{
+    count.setAttribute('data-target', `${ languages.aboutUs[0].abtCard.card[c].body.numTarget }`)
+})
 
 
 
@@ -488,10 +499,6 @@ function toggleEnglish() {
     parallContent.textContent = languages.ptext[0].en;
 
     welText.textContent = languages.headText[0].en
-
-    var servLen = languages.our_services.length;
-
-    var content = languages.our_services[0];
     
     OS_heading.forEach((head, i)=>{
         var content = languages.our_services[i];
@@ -515,7 +522,7 @@ function toggleEnglish() {
         chead.textContent = lanAbUs0.abtCard.card[c].head.en
     })
     c_cards_body.forEach((cbody, c)=>{
-        cbody.textContent = lanAbUs0.abtCard.card[c].body.en
+        cbody.textContent = lanAbUs0.abtCard.card[c].body.unit.en
     })
     c_fea.textContent = lanAbUs0.features.head.en
     c_fea_list.forEach((f_list, f)=>{
@@ -573,7 +580,7 @@ function toggleChinese() {
         chead.textContent = lanAbUs0.abtCard.card[c].head.cn
     })
     c_cards_body.forEach((cbody, c)=>{
-        cbody.textContent = lanAbUs0.abtCard.card[c].body.cn
+        cbody.textContent = lanAbUs0.abtCard.card[c].body.unit.cn
     })
     c_fea.textContent = lanAbUs0.features.head.cn
     c_fea_list.forEach((f_list, f)=>{
@@ -582,6 +589,31 @@ function toggleChinese() {
 
 
 }
+
+
+var counter = document.querySelectorAll('.counter-anim')
+
+        function cnts(){
+            counter.forEach((cnt, i)=>{
+                var target = cnt.getAttribute('data-target');
+                target = parseInt(target);
+                var increment = target/250
+                var printed = 0
+                cnt.textContent = `${ printed }`
+                var timeOut = setInterval(reachTargetNumber, 10);
+        
+                function reachTargetNumber(){
+                    
+                    printed += increment
+                    cnt.textContent = `${ parseInt(printed) }`
+                    if(printed >= target) {
+                        cnt.textContent = `${ target }`
+                        clearTimeout(timeOut);
+                    }
+    
+                }
+            })
+        }
 
 
 
@@ -593,10 +625,25 @@ function toggleChinese() {
 
 var cards = document.querySelectorAll('.serv-container .content-part');
 var images = document.querySelectorAll('.serv-container .image-part');
+var abtCard = document.querySelector('.company-type')
 
 var scH =  window.innerHeight;
 
 window.onscroll = (e)=>{
+
+        var abtCardInfo = abtCard.getBoundingClientRect()
+        var abtCardHeight = abtCardInfo.height
+        var abtCardy = abtCardInfo.y;
+        var point = parseInt(abtCardy+abtCardHeight - scH)
+        if(point >= 0 && point <= 20){
+            cnts();
+        }
+        console.log('abtCardy: ', point)
+
+    
+
+    console.log(scH)
+
 
     var y = this.scrollY;
     body.style.backgroundPositionY = `${ 50 - y*0.3 }px`;
