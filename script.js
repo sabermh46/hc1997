@@ -528,6 +528,9 @@ function toggleEnglish() {
     c_fea_list.forEach((f_list, f)=>{
         f_list.textContent = lanAbUs0.features.featureList[f].en
     })
+    c_cards_count.forEach((count, c)=>{
+        count.textContent = `${ languages.aboutUs[0].abtCard.card[c].body.numTarget }`
+    })
 
 
 
