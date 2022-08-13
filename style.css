@@ -2,6 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Josefin+Sans&family=Poppins&display=swap');
 
+:root {
+    --theme: #c71e40;
+    --themeBlur: #3f06116b;
+    --themeDark: #a61936;
+}
+
 /*
     font-family: 'Hind Siliguri', sans-serif;
     font-family: 'Josefin Sans', sans-serif;
@@ -36,22 +42,27 @@ body {
     align-items: center;
 }
 .nav-bar .container {
-    width: 1100px;
+    width: 1200px;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .nav-bar .container .nav-brand {
-    border: 1px solid;
+    border: 1px solid var(--theme);
     font-size: 50px;
     font-weight: 700;
-    color: rgb(53, 129, 104);
+    display: grid;
+    place-items: center;
+    padding: 5px;
+}
+.nav-bar .container .nav-brand img {
+    height: 80px;
 }
 .mobile-button {
     height: 50px;
     width: 50px;
-    background: white;
+    background: rgb(216, 216, 216);
     border-radius: 40px;
     display: none;
 }
@@ -63,12 +74,13 @@ body {
 }
 .nav-bar .container .nav-items .item:not(.item.lang) {
     position: relative;
+    white-space: nowrap;
 }
 .nav-bar .container .nav-items .item:not(.item.lang) > a {
     padding: 10px 15px;
     text-decoration: none;
     display: block;
-    background: rgb(59, 160, 84);
+    background: var(--theme);
     font-size: 18px;
     color: white;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.561);
@@ -79,14 +91,14 @@ body {
     text-align: center;
 }
 .nav-bar .container .nav-items .item:not(.item.lang) > a:hover {
-    background: rgb(39, 106, 55);
+    background: var(--themeDark);
 }
 
-.nav-bar .container .nav-items .item.lang {
+.item.lang {
     padding: 0;
     height: 40px;
     width: 80px;
-    background: rgb(59, 160, 84);
+    background: var(--theme);
     overflow: hidden;
     border-radius: 100px;
     display: flex;
@@ -97,15 +109,15 @@ body {
     cursor: pointer;
     color: black;
 }
-.nav-bar .container .nav-items .item.lang:hover {
-    background: rgb(59, 160, 84);
+.item.lang:hover {
+    background: var(--theme);
 }
-.nav-bar .container .nav-items .item.lang .language {
+.item.lang .language {
     z-index: 2;
     transition: 0.5s;
 }
-.nav-bar .container .nav-items .item.lang .round {
-    background: rgba(34, 84, 60, 0.741);
+.item.lang .round {
+    background: var(--themeBlur);
     height: 36px;
     aspect-ratio: 1;
     border-radius: 100px;
@@ -115,15 +127,24 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.486);
     transition: 0.5s;
 }
-.nav-bar .container .nav-items .item.lang.en .round {
+.item.lang.en .round {
     left: 2px;
 }
-.nav-bar .container .nav-items .item.lang.cn .round {
+.item.lang.cn .round {
     left: calc(100% - 38px);
 }
-.nav-bar .container .nav-items .item .language.active {
+.item .language.lan1.active {
     color: white;
     font-size: 18px;
+}
+.item .language.lan2 {
+    font-size: 70%;
+    transform: translateX(-2px);
+}
+.item .language.lan2.active {
+    color: white;
+    font-size: 85%;
+    transform: translateX(1px);
 }
 
 
@@ -132,7 +153,7 @@ body {
     top: 100%;
     left: 0;
     list-style-type: none;
-    background: rgb(59, 160, 84);
+    background: var(--theme);
     width: 100%;
     text-align: center;
     transform: translateY(50px);
@@ -170,32 +191,37 @@ body {
 
 
 .bg-image {
-    background-image: url("//nwzimg.wezhan.cn/contents/sitefiles2034/10171962/images/11078143.jpg");
-    height: 400px;
+    background-image: url(./pic/bg.jpg);
+    height: 500px;
+    width: 1200px;
+    margin: 0 auto;
     background-position: 50% 50%;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: cover;
 }
 .bg-image .welcome {
     text-transform: uppercase;
     font-size: 22px;
     color: rgb(232, 232, 232);
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.63);
     font-weight: 700;
 }
 
 
-.nav-bar .container .nav-items .item.lang {
+.item.lang {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.598);
     margin: 10px;
     transition: 0.2s;
 }
-.nav-bar .container .nav-items .item.lang:hover {
+.item.lang:hover {
     transform: translateY(-3px);
     box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.598);
 }
 
-.nav-bar .container .nav-items .item.lang, .nav-items .item {
+.item.lang, .nav-items .item {
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -220,7 +246,7 @@ body {
 }
 
 .services {
-    background: linear-gradient(50deg, rgb(66 136 68 / 80%), rgb(136 189 136 / 87%)), url(./pic/qa2.webp);
+    background: linear-gradient(50deg, #c71e40a7, #c71e4000), url(./pic/qa2.webp);
     background-size: 110%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -230,8 +256,9 @@ body {
 .services h1 {
     text-align: center;
     font-size: 60px;
+    font-weight: 900;
     text-transform: uppercase;
-    color: rgb(86, 216, 86);
+    color: var(--theme);
     padding: 20px 0 100px 0;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.499);
 }
@@ -352,7 +379,7 @@ body {
     margin: 0 auto;
     width: 95%;
     min-width: 1000px;
-    background: #9bc472;
+    background: var(--theme);
     padding: 40px;
     margin-top: 20px;
     border-radius: 20px;
@@ -360,14 +387,14 @@ body {
 .company-name {
     width: 100%;
     font-size: 210%;
-    color: rgb(24, 80, 88);
+    color: rgb(201, 232, 255);
     font-weight: 900;
     letter-spacing: 3px;
     text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.203); 
 }
 .company-name .established {
     font-size: 70%;
-    color: rgb(94, 126, 62);
+    color: rgb(197, 197, 197);
     font-weight: 900;
     letter-spacing: 3px;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.203); 
@@ -378,16 +405,16 @@ body {
 }
 .abtCard {
     position: relative;
-    background: rgba(25, 56, 25, 0.276);
+    background: rgba(0, 0, 0, 0.302);
     overflow: hidden;
     border-radius: 10px;
 }
 .abtCard .head {
     padding: 15px 35px;
-    background: rgba(17, 83, 17, 0.265);
+    background: rgba(0, 0, 0, 0.265);
     text-align: center;
     font-size: 22px;
-    color: rgba(3, 14, 2, 0.432);
+    color: rgba(171, 255, 171, 0.508);
     text-transform: capitalize;
 }
 .abtCard .body {
@@ -395,7 +422,8 @@ body {
     font-size: 40px;
     font-weight: 700;
     padding: 15px 10px;
-    color: rgba(10, 49, 10, 0.508);
+    
+    color: rgba(197, 197, 197, 0.864);
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -403,7 +431,7 @@ body {
     gap: 5px;
 }
 .company-type {
-    color: rgb(22, 74, 28);
+    color: rgb(173, 219, 170);
     font-size: 120%;
     font-weight: 600;
     letter-spacing: 1px;
@@ -415,14 +443,15 @@ body {
     gap: 15px;
 }
 .company-code {
-    color: rgb(20, 138, 59);
+    color: rgb(226, 226, 226);
 }
 .features {
-    border-left: 3px solid rgba(39, 105, 65, 0.586);
+    border-left: 3px solid rgba(119, 182, 144, 0.586);
     border-radius: 3px;
     width: 48%;
     position: relative;
     padding-left: 20px;
+    color: rgb(215, 237, 255);
 }
 .features h3 {
     text-transform: uppercase;
@@ -447,8 +476,8 @@ body {
     content: '';
     width: 10px;
     aspect-ratio: 2.5;
-    border-left: 4px solid rgb(61, 88, 43);
-    border-bottom: 4px solid rgb(61, 88, 43);
+    border-left: 4px solid rgb(202, 255, 167);
+    border-bottom: 4px solid rgb(204, 255, 169);
     position: absolute;
     transform: rotate(-45deg);
     left: -20px;
@@ -498,6 +527,9 @@ body {
     color: aliceblue;
 }
 
+.for-mobile {
+    visibility: hidden;
+}
 
 
 
@@ -520,11 +552,28 @@ body {
         position: relative;
     }
     .nav-bar .container .nav-brand {
-        font-size: 30px;
+        border: 1px solid var(--theme);
+        font-weight: 700;
+        display: grid;
+        place-items: center;
+        padding: 5px;
+    }
+    .nav-bar .container .nav-brand img {
+        height: 50px;
+    }
+    .not-mobile {
+        display: none !important;
+    }
+    .for-mobile {
+        z-index: 9999999;
+        visibility: visible;
+        position: absolute;
+        right: -20px;
+        justify-self: flex-end !important;
     }
     .nav-bar .container .nav-items {
         position: fixed;
-        background: rgb(36 75 45 / 76%);
+        background: #c71e402e;
         width: calc(100% - 70px);
         backdrop-filter: blur(2.5px);
         height: 100vh;
@@ -545,7 +594,7 @@ body {
     .mobile-button .mb {
         height: 5px;
         width: 30px;
-        background: rgb(31, 33, 74);
+        background: var(--theme);
         position: absolute;
         left: 50%;
         transform: translate(-50%, -50%) rotate(0deg);
@@ -616,14 +665,15 @@ body {
 
 
     .services {
-        background: linear-gradient(50deg, rgb(66 136 68 / 80%), rgb(136 189 136 / 87%)), url(./pic/qa2.webp);
-        background-size: 110%;
+
+        background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        background-position-x: 50%;
     
     }
     .services h1 {
-        font-size: 35px;
+        font-size: 40px;
         padding: 20px 0 30px 0;
     }
     .services .serv-container {
@@ -732,7 +782,6 @@ body {
     }
     .company-name .established {
         font-size: 70%;
-        color: rgb(67, 89, 44) !important;
         font-weight: 600;
         letter-spacing: 1px;
 
@@ -750,7 +799,6 @@ body {
         background: rgba(17, 83, 17, 0.265);
         text-align: center;
         font-size: 20px !important;
-        color: rgba(3, 14, 2, 0.527) !important;
         text-transform: capitalize;
     }
     .abtCard .body {
@@ -758,10 +806,8 @@ body {
         font-size: 22px !important;
         font-weight: 700;
         padding: 5px 0px !important;
-        color: rgba(6, 30, 6, 0.789) !important;
     }
     .company-type {
-        color: rgb(22, 74, 28);
         font-size: 120%;
         font-weight: 600;
         letter-spacing: 1px;
@@ -771,9 +817,6 @@ body {
         flex-flow: column wrap;
         justify-content: space-between;
         gap: 15px;
-    }
-    .company-code {
-        color: rgb(20, 138, 59);
     }
     .features {
         border-left:none !important;
@@ -803,8 +846,6 @@ body {
         content: '';
         width: 10px;
         aspect-ratio: 2.5;
-        border-left: 4px solid rgb(61, 88, 43);
-        border-bottom: 4px solid rgb(61, 88, 43);
         position: absolute;
         transform: rotate(-45deg);
         left: -20px;
@@ -843,6 +884,12 @@ body {
     
     .wa-icon div p {
         font-size: 20px;
+    }
+
+    .bg-image {
+        height: 400px;
+        width: 100%;
+        background-position-y: 65px;
     }
 
 

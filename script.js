@@ -7,26 +7,30 @@ body.style.backgroundPositionY = `${ 50 }px`;
 abtUs.style.backgroundPositionY = `${ 100 }px`;
 
 
-var langButton = document.querySelector('.nav-bar .container .nav-items .item.lang');
-var lan1 = document.querySelector('.lan1');
-var lan2 = document.querySelector('.lan2');
+var langButton = document.querySelectorAll('.item.lang');
+
 
 var welText = document.querySelector('.bg-image .welcome');
 var count = 0;
-
-langButton.addEventListener('click', ()=>{
-    lan1.classList.toggle('active');
-    lan2.classList.toggle('active');
-    if(++count%2) {
-        langButton.classList.remove('en');
-        langButton.classList.add('cn');
-        toggleChinese();
-    } else {
-        langButton.classList.remove('cn');
-        langButton.classList.add('en');
-        toggleEnglish();
-    }
+langButton.forEach((lBtn, i)=>{
+    var lan1 = lBtn.querySelector('.lan1');
+    var lan2 = lBtn.querySelector('.lan2');
+    console.log(lan1, lan2)
+    lBtn.addEventListener('click', ()=>{
+        lan1.classList.toggle('active');
+        lan2.classList.toggle('active');
+        if(++count%2) {
+            lBtn.classList.remove('en');
+            lBtn.classList.add('cn');
+            toggleChinese();
+        } else {
+            lBtn.classList.remove('cn');
+            lBtn.classList.add('en');
+            toggleEnglish();
+        }
+    })
 })
+
 
 
 var mobileButton = document.querySelector('.mobile-button');
@@ -45,7 +49,7 @@ var languages =
     {
         navBar: [
             {
-                en: 'Front Page',
+                en: 'Home',
                 cn: '首页',
                 subLinks: 0,
                 loc: '#'
@@ -210,7 +214,7 @@ var languages =
         ],
         our_services: [
             {
-                image: 'https://www.intouch-quality.com/hubfs/quality-defects-ft-lg.jpg',
+                image: './pic/qa3.jpg',
                 heading: {
                     en: 'Customer inspection',
                     cn: '客户验货'
@@ -226,7 +230,7 @@ var languages =
                 }
             },
             {
-                image: 'https://reciprocity.com/wp-content/uploads/2021/06/resource_audit-procedures-internal-controls_featured-img_730x270.jpg',
+                image: './pic/qa2.webp',
                 heading: {
                     en: 'Material re-judgment',
                     cn: '物料复判'
@@ -242,7 +246,7 @@ var languages =
                 }
             },
             {
-                image: 'https://thumbs.dreamstime.com/b/exception-handling-form-binary-code-d-illustration-84207111.jpg',
+                image: './pic/pl.jpg',
                 heading: {
                     en: 'exception handling',
                     cn: '异常处理'
