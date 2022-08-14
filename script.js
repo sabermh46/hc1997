@@ -645,11 +645,7 @@ window.onscroll = (e)=>{
         if(point >= 0 && point <= 20){
             cnts();
         }
-        console.log('abtCardy: ', point)
 
-    
-
-    console.log(scH)
 
 
     var y = this.scrollY;

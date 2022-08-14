@@ -353,14 +353,14 @@ body {
 }
 .about_us h1 {
     padding: 5px  20px;
-    color: rgb(171, 236, 161);
+    color: var(--theme);
     text-shadow: -1px 1px 20px #0000004a;
     width: min-content;
     white-space: nowrap;
     font-size: 90px;
     text-transform: uppercase;
     letter-spacing: 15px;
-    background: rgba(80 144 77 / 89%);
+    background: #bed3c4;
 }
 .about_us h2 {
     padding: 10px 10px;
@@ -490,7 +490,7 @@ body {
 }
 .contact_us h1 {
     padding: 5px  20px;
-    color: rgb(52, 74, 49);
+    color: var(--theme);
     text-shadow: -1px 1px 20px #0000004a;
     width: min-content;
     white-space: nowrap;
@@ -858,7 +858,6 @@ body {
     }
     .contact_us h1 {
         padding: 5px  20px;
-        color: rgb(52, 74, 49);
         text-shadow: -1px 1px 20px #0000004a;
         width: min-content;
         white-space: nowrap;
