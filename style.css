@@ -34,7 +34,8 @@ body {
 
 
 .nav-bar {
-    background: rgb(209, 245, 222);
+    background: rgb(255, 218, 220);
+    backface-visibility: hidden;
     height: 100px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.269);
     display: flex;
@@ -72,11 +73,11 @@ body {
     align-items: center;
     gap: 15px;
 }
-.nav-bar .container .nav-items .item:not(.item.lang) {
+.nav-bar .container .nav-items .item.l {
     position: relative;
     white-space: nowrap;
 }
-.nav-bar .container .nav-items .item:not(.item.lang) > a {
+.nav-bar .container .nav-items .item.l > a {
     padding: 10px 15px;
     text-decoration: none;
     display: block;
@@ -246,7 +247,7 @@ body {
 }
 
 .services {
-    background: linear-gradient(50deg, #c71e40a7, #c71e4000), url(./pic/qa2.webp);
+    background: linear-gradient(50deg, #03010282, #c71e4000), url(./pic/bg2.jpg);
     background-size: 110%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -533,6 +534,45 @@ body {
 
 
 
+.arrow {
+    height: 40px;
+    width: 40px;
+    background: var(--theme);
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    border-radius: 40px;
+    transition: 0.3s;
+    border: 2px solid white;
+    visibility: hidden;
+}
+.arrow::before {
+    content: '';
+    position: absolute;
+    height: 10px;
+    aspect-ratio: 1;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+    border-style: solid;
+    border-color: antiquewhite;
+    border-width: 3px 3px 0 0;
+}
+.arrow::after {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 3px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: antiquewhite;
+}
+.arrow:hover {
+    transform: scale(1.1);
+}
+
+
 @media (max-width: 500px) {
 
     body {
@@ -634,7 +674,7 @@ body {
         box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.598);
     }
     .nav-bar .container .nav-items .item ul {
-        border: 5px solid rgb(39, 106, 55);
+        border: 5px solid rgb(106, 39, 75);
         z-index: 5;
     }
     .nav-bar .container .nav-items .item ul li {
@@ -889,6 +929,11 @@ body {
         height: 400px;
         width: 100%;
         background-position-y: 65px;
+    }
+    .arrow {
+        right: 10px;
+        bottom: 10px;
+        -webkit-tap-highlight-color: transparent;
     }
 
 

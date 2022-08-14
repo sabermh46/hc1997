@@ -316,7 +316,7 @@ console.log(languages)
 
 
 
-var nav_bar = document.querySelectorAll('.nav-items .item:not(.item.lang)');
+var nav_bar = document.querySelectorAll('.item.l');
 
 var parallContent = document.querySelector('.parallax-container .content');
 
@@ -633,17 +633,24 @@ var counter = document.querySelectorAll('.counter-anim')
 var cards = document.querySelectorAll('.serv-container .content-part');
 var images = document.querySelectorAll('.serv-container .image-part');
 var abtCard = document.querySelector('.company-type')
+var arrow = document.querySelector('.arrow')
 
 var scH =  window.innerHeight;
+var startedCounting = false
 
 window.onscroll = (e)=>{
 
+        
         var abtCardInfo = abtCard.getBoundingClientRect()
         var abtCardHeight = abtCardInfo.height
         var abtCardy = abtCardInfo.y;
         var point = parseInt(abtCardy+abtCardHeight - scH)
-        if(point >= 0 && point <= 20){
-            cnts();
+        if(point < 0){
+            if(startedCounting == false)
+            {
+                cnts();
+                startedCounting = true
+            }
         }
 
 
@@ -670,6 +677,17 @@ window.onscroll = (e)=>{
             cards[i].classList.remove('arrived');
         }
     })
+
+    console.log('y: ' + y)
+
+    if(y > 2200)
+    {
+        arrow.style.visibility = 'visible';
+        arrow.style.opacity = 1
+    } else {
+        arrow.style.visibility = 'hidden';
+        arrow.style.opacity = 0
+    }
 
 
 }
