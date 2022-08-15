@@ -572,6 +572,23 @@ body {
     transform: scale(1.1);
 }
 
+.image-part.slider {
+    overflow: hidden;
+    position: relative;
+}
+
+.image-part.slider .slideFrame {
+    height: 100%;
+    transition: 0.5s;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.image-part.slider .slideFrame img {
+    height: auto;
+    object-fit: cover;
+}
+
 
 @media (max-width: 500px) {
 
@@ -934,6 +951,10 @@ body {
         right: 10px;
         bottom: 10px;
         -webkit-tap-highlight-color: transparent;
+    }
+
+    .image-part.slider {
+        min-height: 230px;
     }
 
 

@@ -1,5 +1,6 @@
 
 
+
 var body = document.querySelector('body');
 var abtUs = document.querySelector('.about_us');
 
@@ -214,7 +215,14 @@ var languages =
         ],
         our_services: [
             {
-                image: './pic/qa3.jpg',
+                image: [
+                    './pic/qa.jpg',
+                    './pic/qa2.webp',
+                    './pic/pl.jpg',
+                    './pic/parallax.png',
+                    './pic/bg.jpg',
+                    './pic/qa3.jpg',
+                ],
                 heading: {
                     en: 'Customer inspection',
                     cn: '客户验货'
@@ -294,7 +302,14 @@ var languages =
                 }
             },
             {
-                image: 'https://www.profolus.com/wp-content/uploads/2019/02/Examples-and-types-of-after-sales-service.jpg',
+                image: [
+                    './pic/qa.jpg',
+                    './pic/qa2.webp',
+                    './pic/pl.jpg',
+                    './pic/parallax.png',
+                    './pic/bg.jpg',
+                    './pic/qa3.jpg',
+                ],
                 heading: {
                     en: 'After-sales and maintenance',
                     cn: '售后、维修'
@@ -312,6 +327,8 @@ var languages =
         ]
     }
 
+    console.log('Type of: ' + typeof languages.our_services[0].image);
+
 console.log(languages)
 
 
@@ -324,6 +341,7 @@ var services = document.getElementById('services');
 
 var aboutUs = document.querySelector('#about_us .abtUs')
 
+var sliderCount
 
 function toggle_nav(){
 
@@ -352,22 +370,52 @@ function toggle_nav(){
 
         var servLen = languages.our_services.length;
     console.log(servLen)
+    sliderCount = 0
         for(var s=0; s<servLen; s++)
         {
+            
             var serv_container = document.createElement('div');
             serv_container.classList.add('serv-container')
             var content = languages.our_services[s];
-            serv_container.innerHTML = `
-            <div class='image-part'>
-            <img src='${ content.image }' alt='${ content.heading.en } Image'>
-            </div>
-            <div class='content-part'>
-                <h2>${ true } </h2>
-                <p>${ true }</p>
-                <a class='seeMor' href="#">${ true }</a>
-            </div>
-            `
-            services.appendChild(serv_container)
+            if(typeof content.image != typeof '')
+            {
+                console.log('!Found')
+                serv_container.innerHTML = `
+                    <div class='image-part slider'>
+                        <div class="slideFrame"></div>
+                    </div>
+                    <div class='content-part'>
+                        <h2>${ true } </h2>
+                        <p>${ true }</p>
+                        <a class='seeMor' href="#">${ true }</a>
+                    </div>
+                `
+                services.appendChild(serv_container)
+                var sliderFrame = document.querySelectorAll('.image-part.slider .slideFrame');
+                
+                var sliderImagesLen = content.image.length;
+                for(var i=0; i<sliderImagesLen; i++)
+                {
+                    var sliderImage = document.createElement('img');
+                    sliderImage.src = content.image[i]
+                    sliderFrame[sliderCount].appendChild(sliderImage);
+                }
+                sliderCount++
+            } else {
+                console.log('Found')
+                serv_container.innerHTML = `
+                    <div class='image-part'>
+                    <img src='${ content.image }' alt='${ content.heading.en } Image'>
+                    </div>
+                    <div class='content-part'>
+                        <h2>${ true } </h2>
+                        <p>${ true }</p>
+                        <a class='seeMor' href="#">${ true }</a>
+                    </div>
+                `
+                services.appendChild(serv_container)
+            }
+            
         }
 
         var com_name = document.createElement('div');
@@ -622,6 +670,47 @@ var counter = document.querySelectorAll('.counter-anim')
             })
         }
 
+
+
+/*
+        
+*/
+
+var moved = [];
+for(var m=0; m<sliderCount; m++)
+{
+    moved[m] = 0
+}
+var slider = document.querySelectorAll('.image-part.slider');
+slider.forEach((slideR, sli)=>{
+    var sliderFrame = slideR.querySelector('.slideFrame')
+    
+    var slideRInfo = slideR.getBoundingClientRect();
+    var slideRwidth = slideRInfo.width
+    var slideRheight = slideRInfo.height
+
+    var slideImages = sliderFrame.querySelectorAll('img')
+    var sIL = slideImages.length
+
+    sliderFrame.style.width = slideRwidth * sIL + 'px';
+
+    slideImages.forEach((slImage)=>{
+        slImage.style.width = slideRwidth + 'px'
+        slImage.style.height = slideRheight + 'px'
+    })
+    
+    
+    var moving = setInterval(moveSlider, 3000)
+
+    function moveSlider(){
+        sliderFrame.style.left = `-${ moved[sli] }px`
+        moved[sli] += slideRwidth
+        if(moved[sli]  >= slideRwidth * sIL)
+        {
+            moved[sli] = 0;
+        }
+    }
+})
 
 
 
