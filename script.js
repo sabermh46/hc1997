@@ -114,8 +114,8 @@ var languages =
                     cn: '关于我们'
                 },
                 companyName: {
-                    en: 'Shentang Transsion Holdings Limited',
-                    cn: '深塘传音控股有限公司'
+                    en: 'Limpid',
+                    cn: '弱视'
                 },
                 established: {
                     en: 'August 20, 2013',
