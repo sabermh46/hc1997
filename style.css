@@ -259,7 +259,7 @@ body {
     font-size: 60px;
     font-weight: 900;
     text-transform: uppercase;
-    color: var(--theme);
+    color: cadetblue;
     padding: 20px 0 100px 0;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.499);
 }
