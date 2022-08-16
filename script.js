@@ -217,10 +217,10 @@ var languages =
             {
                 image: [
                     './pic/qa.jpg',
-                    './pic/qa2.webp',
-                    './pic/pl.jpg',
-                    './pic/parallax.png',
-                    './pic/bg.jpg',
+                    './pic/matRejudge.jpeg',
+                    './pic/WhatsApp Image 2022-08-16 at 2.31.58 PM (1).jpeg',
+                    './pic/WhatsApp Image 2022-08-16 at 2.31.58 PM.jpeg',
+                    './pic/wearhousing.jpeg',
                     './pic/qa3.jpg',
                 ],
                 heading: {
@@ -238,7 +238,7 @@ var languages =
                 }
             },
             {
-                image: './pic/qa2.webp',
+                image: './pic/matRejudge.jpeg',
                 heading: {
                     en: 'Material re-judgment',
                     cn: '物料复判'
@@ -286,7 +286,7 @@ var languages =
                 }
             },
             {
-                image: 'https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/uploads/job_description_template/Warehouse_Worker.jpg=ws720x480',
+                image: './pic/wearhousing.jpeg',
                 heading: {
                     en: 'Warehousing',
                     cn: '仓储'
@@ -303,12 +303,9 @@ var languages =
             },
             {
                 image: [
-                    './pic/qa.jpg',
-                    './pic/qa2.webp',
-                    './pic/pl.jpg',
-                    './pic/parallax.png',
-                    './pic/bg.jpg',
-                    './pic/qa3.jpg',
+                    './pic/matRejudge.jpeg',
+                    './pic/WhatsApp Image 2022-08-16 at 2.31.58 PM (1).jpeg',
+                    './pic/WhatsApp Image 2022-08-16 at 2.31.58 PM.jpeg',
                 ],
                 heading: {
                     en: 'After-sales and maintenance',
@@ -685,7 +682,7 @@ var slider = document.querySelectorAll('.image-part.slider');
 slider.forEach((slideR, sli)=>{
     var sliderFrame = slideR.querySelector('.slideFrame')
     
-    var slideRInfo = slideR.getBoundingClientRect();
+    var slideRInfo = slideR.getBoundingClientRect()
     var slideRwidth = slideRInfo.width
     var slideRheight = slideRInfo.height
 

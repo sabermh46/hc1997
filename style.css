@@ -34,7 +34,7 @@ body {
 
 
 .nav-bar {
-    background: rgb(255, 218, 220);
+    background: rgb(255, 255, 255);
     backface-visibility: hidden;
     height: 100px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.269);
@@ -941,7 +941,6 @@ body {
     .wa-icon div p {
         font-size: 20px;
     }
-
     .bg-image {
         height: 400px;
         width: 100%;
