@@ -241,7 +241,7 @@ var languages =
                 image:[
                     './pic/matRejudge.jpeg',
                     './pic/WhatsApp Image 2022-08-16 at 2.31.58 PM.jpeg',
-                    './pic/qa.jpg',
+                    './pic/mr.jpeg',
                 ],
                 heading: {
                     en: 'Material re-judgment',
