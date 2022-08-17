@@ -238,7 +238,11 @@ var languages =
                 }
             },
             {
-                image: './pic/matRejudge.jpeg',
+                image:[
+                    './pic/matRejudge.jpeg',
+                    './pic/WhatsApp Image 2022-08-16 at 2.31.58 PM.jpeg',
+                    './pic/qa.jpg',
+                ],
                 heading: {
                     en: 'Material re-judgment',
                     cn: '物料复判'
@@ -302,11 +306,7 @@ var languages =
                 }
             },
             {
-                image: [
-                    './pic/matRejudge.jpeg',
-                    './pic/WhatsApp Image 2022-08-16 at 2.31.58 PM (1).jpeg',
-                    './pic/WhatsApp Image 2022-08-16 at 2.31.58 PM.jpeg',
-                ],
+                image: './pic/WhatsApp Image 2022-08-16 at 2.31.58 PM (1).jpeg',
                 heading: {
                     en: 'After-sales and maintenance',
                     cn: '售后、维修'
