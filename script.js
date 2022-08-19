@@ -115,16 +115,16 @@ var languages =
                     cn: '关于我们'
                 },
                 companyName: {
-                    en: 'Limpid',
-                    cn: '弱视'
+                    en: 'Wang Cheng',
+                    cn: '王成'
                 },
                 established: {
                     en: 'August 20, 2013',
                     cn: '2013年08月20日'
                 },
                 companyAddress: {
-                    en: 'Road No #23, House No #456, Selected City, Selected State',
-                    cn: 'Road No #23, House No #456, Selected City, Selected State'
+                    en: 'HOUSE: #72 (3rd floor), ROAD: #12, D.I.T PROJECT, MERUL BADDA, GULSHAN, post coad: #1212',
+                    cn: 'HOUSE: #72 (3rd floor), ROAD: #12, D.I.T PROJECT, MERUL BADDA, GULSHAN, post coad: #1212'
                 },
                 companyType: {
                     type: [
