@@ -9,28 +9,13 @@ abtUs.style.backgroundPositionY = `${ 100 }px`;
 
 
 var langButton = document.querySelectorAll('.item.lang');
+var langEN = document.querySelectorAll('.language.lan1')
+var langCN = document.querySelectorAll('.language.lan2')
 
 
 var welText = document.querySelector('.bg-image .welcome');
 var count = 0;
-langButton.forEach((lBtn, i)=>{
-    var lan1 = lBtn.querySelector('.lan1');
-    var lan2 = lBtn.querySelector('.lan2');
-    console.log(lan1, lan2)
-    lBtn.addEventListener('click', ()=>{
-        lan1.classList.toggle('active');
-        lan2.classList.toggle('active');
-        if(++count%2) {
-            lBtn.classList.remove('en');
-            lBtn.classList.add('cn');
-            toggleChinese();
-        } else {
-            lBtn.classList.remove('cn');
-            lBtn.classList.add('en');
-            toggleEnglish();
-        }
-    })
-})
+
 
 
 
@@ -104,8 +89,8 @@ var languages =
         ],
         ptext: [
             {
-                en: ' Limpid company was incorporated at (address) on June 18, 2022. The company mainly provides third-party inspection and materials for mobile phones, computers, tablets, electronic watches, TV sets and other products for major electronic product companies in and outside Bangladesh. Re-judgment, abnormal handling, transportation, warehousing, after-sales maintenance and other professional services of materials, semi-finished products and finished products; relying on good reputation and professional advantages, the company has established good cooperative relations with many large companies and multinational companies at home and abroad; Qualifications and Certificates Obtained have been applied for and passed (Qualifications and Certificates Obtained), which indicates that our company\'s operation system has met the international standard requirements of the industry, and it is also an effective guarantee for our company to provide perfect services to customers; the company\'s service area includes Bangladesh All regions in China and India; the company has established various functional departments with complete functions to provide efficient and professional services for all cooperative enterprises.',
-            cn: 'Limpid 公司于（2022年6月18日）在（address）注册成立，公司主要为孟加拉国内外各大电子产品公司提供手机、电脑、平板、电子手表、电视机等产品的第三方验货、物料复判、异常处理、物料、半成品、成品的运输、仓储，售后维修等专业的服务；凭借良好的声誉和专业优势公司与国内外多家大型公司、跨国公司建立良好的合作关系\；我司各项资质齐全，已申请并通过了（Qualifications and Certificates Obtained），这标志着我司的运行体系已经符合行业的国际标准要求，同时也是我司对客户提供完美服务的有效保证；公司服务区域包括孟加拉国所有区域、印度区域；公司设立了各类功能完善的职能部门，为所有合作企业提供高效专业的服务。',
+                en: 'Wang Cheng Electronic Services Co. LTD was incorporated at HOUSE: #72 (3rd floor), ROAD: #12, D.I.T PROJECT, MERUL BADDA, GULSHAN, post coad: #1212 on June 18, 2022. The company mainly provides third-party inspection and materials for mobile phones, computers, tablets, electronic watches, TV sets and other products for major electronic product companies in and outside Bangladesh. Re-judgment, abnormal handling, transportation, warehousing, after-sales maintenance and other professional services of materials, semi-finished products and finished products; relying on good reputation and professional advantages, the company has established good cooperative relations with many large companies and multinational companies at home and abroad; Qualifications and Certificates Obtained have been applied for and passed (Qualifications and Certificates Obtained), which indicates that our company\'s operation system has met the international standard requirements of the industry, and it is also an effective guarantee for our company to provide perfect services to customers; the company\'s service area includes Bangladesh All regions in China and India; the company has established various functional departments with complete functions to provide efficient and professional services for all cooperative enterprises.',
+            cn: '望诚电子服务有限公司于2022年6月18日在HOUSE: #72 (3rd floor), ROAD: #12, D.I.T PROJECT, MERUL BADDA, GULSHAN, post coad: #1212注册成立。公司主要提供第三方服务为孟加拉国境内外各大电子产品公司提供手机、电脑、平板电脑、电子手表、电视机等产品的检测和材料。材料、半成品、成品的重新判断、异常处理、运输、仓储、售后维修等专业服务；公司凭借良好的信誉和专业优势，与国内外多家大公司、跨国公司建立了良好的合作关系；获得的资质证书已申请并通过（Qualifications and Certificates Observed），这表明我公司的运营体系已达到行业国际标准要求，也是我公司提供完善的有效保障为客户提供服务；公司服务区域包括孟加拉中国和印度的所有地区；公司设立了功能齐全的各职能部门，为各合作企业提供高效、专业的服务。',
             }
         ],
         aboutUs: [
@@ -324,9 +309,6 @@ var languages =
         ]
     }
 
-    console.log('Type of: ' + typeof languages.our_services[0].image);
-
-console.log(languages)
 
 
 
@@ -356,7 +338,7 @@ function toggle_nav(){
             {
                 var li = document.createElement('li');
                 var a = document.createElement('a');
-                a.href = `${ subLinks[j].loc}`;
+                a.href = `${ subLinks[j].loc }`;
                 a.classList.add('subAlink');
                 li.appendChild(a)
                 ul.appendChild(li);
@@ -366,7 +348,7 @@ function toggle_nav(){
     })
 
         var servLen = languages.our_services.length;
-    console.log(servLen)
+    
     sliderCount = 0
         for(var s=0; s<servLen; s++)
         {
@@ -376,7 +358,6 @@ function toggle_nav(){
             var content = languages.our_services[s];
             if(typeof content.image != typeof '')
             {
-                console.log('!Found')
                 serv_container.innerHTML = `
                     <div class='image-part slider'>
                         <div class="slideFrame"></div>
@@ -399,7 +380,6 @@ function toggle_nav(){
                 }
                 sliderCount++
             } else {
-                console.log('Found')
                 serv_container.innerHTML = `
                     <div class='image-part'>
                     <img src='${ content.image }' alt='${ content.heading.en } Image'>
@@ -456,7 +436,6 @@ function toggle_nav(){
 
             companyType.appendChild(abtCard);
         }
-        console.log(companyType)
 
         var features = document.createElement('div');
         features.classList.add('features')
@@ -479,8 +458,6 @@ function toggle_nav(){
         aboutUs.appendChild(com_name)
         aboutUs.appendChild(companyType)
         aboutUs.appendChild(features);
-
-        console.log(aboutUs)
 
 }
 
@@ -524,6 +501,20 @@ c_cards_count.forEach((count, c)=>{
 
 
 function toggleEnglish() {
+
+    localStorage.setItem('lang', 'en')
+
+    langButton.forEach(langBtn=>{
+        langBtn.classList.remove('cn')
+        langBtn.classList.add('en');
+    })
+
+    langEN.forEach(en => {
+        en.classList.add('active')
+    })
+    langCN.forEach(cn => {
+        cn.classList.remove('active')
+    })
 
     nav_bar_link.forEach((nLink, i)=>{
         nLink.textContent = languages.navBar[i].en
@@ -585,9 +576,24 @@ function toggleEnglish() {
 
 
 }
-toggleEnglish();
 
 function toggleChinese() {
+
+    localStorage.setItem('lang', 'cn')
+
+    langButton.forEach(langBtn=>{
+        langBtn.classList.remove('en')
+        langBtn.classList.add('cn');
+    })
+
+    langEN.forEach(en => {
+        en.classList.remove('active')
+    })
+    langCN.forEach(cn => {
+        cn.classList.add('active')
+    })
+
+    
 
     nav_bar_link.forEach((nLink, i)=>{
         nLink.textContent = languages.navBar[i].cn
@@ -764,7 +770,6 @@ window.onscroll = (e)=>{
         }
     })
 
-    console.log('y: ' + y)
 
     if(y > 2200)
     {
@@ -777,3 +782,30 @@ window.onscroll = (e)=>{
 
 
 }
+
+if(localStorage.getItem('lang') === null || localStorage.getItem('lang') == 'en') {
+    toggleEnglish()
+} else {
+    toggleChinese()
+}
+
+function checkLangMode() {
+    if(localStorage.getItem('lang') == 'en'){
+        toggleChinese();
+    } else if(localStorage.getItem('lang') == 'cn') {
+        toggleEnglish();
+    }
+}
+
+
+
+
+
+
+langButton.forEach(lBtn => {
+    lBtn.addEventListener('click', ()=>{
+        checkLangMode();
+    })
+})
+
+
