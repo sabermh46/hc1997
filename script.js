@@ -54,25 +54,19 @@ var languages =
                     {
                         en: 'Link 1',
                         cn: 'Cn SUB 1',
-                        loc: 'https://facebook.com/'
+                        loc: '#'
                     },
                     {
                         en: 'Link 2',
                         cn: 'Cn SUB 2',
-                        loc: 'https://facebook.com/'
+                        loc: '#'
                     },
                     {
                         en: 'Link 3',
                         cn: 'Cn SUB 3',
-                        loc: 'https://facebook.com/'
+                        loc: '#'
                     }
                 ]
-            },
-            {
-                en: 'Business Scope',
-                cn: '业务范围',
-                subLinks: 0,
-                loc: 'https://google.com/'
             },
             {
                 en: 'Contact Us',
@@ -83,8 +77,8 @@ var languages =
         ],
         headText: [
             {
-                en: 'welcome To our Page',
-                cn: '欢迎来到我们的页面',
+                en: 'Welcome to Wang Cheng Electronic Services',
+                cn: '欢迎来到旺成电子服务',
             }
         ],
         ptext: [
@@ -100,8 +94,8 @@ var languages =
                     cn: '关于我们'
                 },
                 companyName: {
-                    en: 'Wang Cheng',
-                    cn: '王成'
+                    en: 'Wang Cheng Electronic Services',
+                    cn: '望诚电子服务'
                 },
                 established: {
                     en: 'August 20, 2013',
@@ -135,7 +129,7 @@ var languages =
                                 cn: '人数'
                             },
                             body: {
-                                numTarget: '547',
+                                numTarget: '28',
                                 unit: {
                                     en: '',
                                     cn: ''
@@ -148,10 +142,10 @@ var languages =
                                 cn: '注册资本'
                             },
                             body: {
-                                numTarget: '80169095',
+                                numTarget: '100000',
                                 unit: {
-                                    en: 'Million RMB',
-                                    cn: '亿元人民币'
+                                    en: 'RMB',
+                                    cn: '人民币'
                                 }
                             },
                         }
@@ -159,37 +153,49 @@ var languages =
                 },
                 features: {
                     head: {
-                        en: 'features',
-                        cn: '特征'
+                        en: 'Company Clients list',
+                        cn: '公司客户名单'
                     },
                     featureList: [
                         {
-                            en: 'Technology development and technical consultation of mobile Internet and mobile phone software',
-                            cn: '移动互联网和手机软件的技术开发和技术咨询'
+                            en: '#Transsion Holdings ltd.',
+                            cn: '#传音控股有限公司'
                         },
                         {
-                            en: 'Innovation and development of electronic products',
-                            cn: '电子产品的创新与发展'
+                            en: '#Samsang(FEL).',
+                            cn: '#三星（FEL）。'
                         },
                         {
-                            en: 'Import and export and related wealth distribution business (excluding state-owned sudden and easy-to-manage commodities',
-                            cn: '进出口及相关财富分配业务（不含国有突发性易管理商品）'
+                            en: '#Vibrant (Nokia)',
+                            cn: '#充满活力（诺基亚）'
                         },
                         {
-                            en: 'Import and export requirements',
-                            cn: '进出口要求'
+                            en: '#OPPO',
+                            cn: '#OPPO'
                         },
                         {
-                            en: 'License management and other specialties',
-                            cn: '许可证管理和其他专业'
+                            en: '#vivo',
+                            cn: '#vivo'
                         },
                         {
-                            en: 'For democratically managed commodities, applications shall be processed in accordance with the relevant (regulations of the four countries)',
-                            cn: '民主管理商品，按有关（四国规定）办理申请'
+                            en: '#walton.',
+                            cn: '#沃尔顿。'
                         },
                         {
-                            en: 'The licensed project is: Ouqihui',
-                            cn: '授权项目为：欧启辉'
+                            en: '#DBG(Xiaomi)',
+                            cn: '#DBG(小米)'
+                        },
+                        {
+                            en: '#ZX.',
+                            cn: '#ZX。'
+                        },
+                        {
+                            en: '#Tinno.',
+                            cn: '#蒂诺。'
+                        },
+                        {
+                            en: '#wintake.',
+                            cn: '#wintake。'
                         },
                     ],
 
@@ -198,6 +204,10 @@ var languages =
             
 
         ],
+        ossHead: {
+            en: 'Our Services',
+            cn: '我们的服务'
+        },
         our_services: [
             {
                 image: [
@@ -319,6 +329,8 @@ var parallContent = document.querySelector('.parallax-container .content');
 var services = document.getElementById('services');
 
 var aboutUs = document.querySelector('#about_us .abtUs')
+
+var OsHead = document.querySelector('.osHead');
 
 var sliderCount
 
@@ -572,6 +584,8 @@ function toggleEnglish() {
         count.textContent = `${ languages.aboutUs[0].abtCard.card[c].body.numTarget }`
     })
 
+    OsHead.textContent = languages.ossHead.en
+
 
 
 
@@ -644,6 +658,8 @@ function toggleChinese() {
     c_fea_list.forEach((f_list, f)=>{
         f_list.textContent = lanAbUs0.features.featureList[f].cn
     })
+
+    OsHead.textContent = languages.ossHead.cn
 
 
 }
