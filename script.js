@@ -98,8 +98,8 @@ var languages =
                     cn: '望诚电子服务'
                 },
                 established: {
-                    en: 'August 20, 2013',
-                    cn: '2013年08月20日'
+                    en: '2nd February, 2022',
+                    cn: '2nd February, 2022'
                 },
                 companyAddress: {
                     en: 'HOUSE: #72 (3rd floor), ROAD: #12, D.I.T PROJECT, MERUL BADDA, GULSHAN, post coad: #1212',
@@ -336,7 +336,6 @@ var sliderCount
 
 function toggle_nav(){
 
-
     nav_bar.forEach((link, i)=>{
 
         var a = document.createElement('a');
@@ -424,12 +423,6 @@ function toggle_nav(){
 
         var companyType = document.createElement('div');
         companyType.classList.add('company-type');
-        companyType.innerHTML = `<div>
-                <p> ${ true }</p>
-                    <p> ${ true }</p>
-                    <span class='company-code'>${ true }</span>
-                    </div>
-        `
 
         var abtCardlen = languages.aboutUs[0].abtCard.card.length;
 
@@ -468,7 +461,9 @@ function toggle_nav(){
 
 
         aboutUs.appendChild(com_name)
+
         aboutUs.appendChild(companyType)
+
         aboutUs.appendChild(features);
 
 }
@@ -566,10 +561,12 @@ function toggleEnglish() {
     c_name.textContent = lanAbUs0.companyName.en
     c_est.textContent = lanAbUs0.established.en
     c_add.textContent = lanAbUs0.companyAddress.en
-    c_code.textContent = lanAbUs0.companyType.companyCode.en
+
+/*     c_code.textContent = lanAbUs0.companyType.companyCode.en
     c_part2.forEach((cpart, i)=>{
         cpart.textContent = lanAbUs0.companyType.type[i].en
-    })
+    }) */
+
     c_cards_head.forEach((chead, c)=>{
         chead.textContent = lanAbUs0.abtCard.card[c].head.en
     })
@@ -644,10 +641,12 @@ function toggleChinese() {
     c_name.textContent = lanAbUs0.companyName.cn
     c_est.textContent = lanAbUs0.established.cn
     c_add.textContent = lanAbUs0.companyAddress.cn
+/* 
     c_code.textContent = lanAbUs0.companyType.companyCode.cn
     c_part2.forEach((cpart, i)=>{
         cpart.textContent = lanAbUs0.companyType.type[i].cn
     })
+     */
     c_cards_head.forEach((chead, c)=>{
         chead.textContent = lanAbUs0.abtCard.card[c].head.cn
     })
