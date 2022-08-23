@@ -1,4 +1,9 @@
+window.addEventListener('DOMContentLoaded', ()=>{
 
+    var preLoader = document.querySelector('.preLoader');
+
+    preLoader.style.display = 'none';
+    
 
 
 var body = document.querySelector('body');
@@ -109,7 +114,7 @@ var languages =
                     type: [
                         {
                             en: 'HOUSE: #72 (3rd floor),<br> ROAD: #12,<br>  D.I.T PROJECT, MERUL BADDA, GULSHAN,<br>  post coad: #1212',
-                            cn: 'HOUSE: #72 (3rd floor), ROAD: #12, D.I.T PROJECT, MERUL BADDA, GULSHAN, post coad: #1212'
+                            cn: 'HOUSE: #72 (3rd floor),<br> ROAD: #12,<br>  D.I.T PROJECT, MERUL BADDA, GULSHAN,<br>  post coad: #1212'
                         },
                         {
                             en: '',
@@ -858,3 +863,5 @@ langButton.forEach(lBtn => {
 })
 
 
+
+})
