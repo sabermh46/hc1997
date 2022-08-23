@@ -1,10 +1,16 @@
 
 
+
+
 window.addEventListener('DOMContentLoaded', ()=>{
 
     var preLoader = document.querySelector('.preLoader');
+var namemm = document.querySelector('.namemm');
+var dnone = document.querySelector('.display_none');
 
     preLoader.style.display = 'none';
+    namemm.style.display = 'none';
+    dnone.style.display = 'none';
     
 
 

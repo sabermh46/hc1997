@@ -32,53 +32,7 @@ body {
     background-position-x: 50%;
 }
 
-.preLoader {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: grid;
-    place-items: center;
-    background: white;
-    z-index: 10000000;
-    
-}
-.load {
-    height: 200px;
-    width: 200px;
-    border-radius: 100px;
-    border: 15px solid transparent;
-    border-top: 15px solid var(--theme);
-    text-align: center;
-    line-height: 30px;
-    font-weight: bold;
-    color: var(--theme);
-    text-transform: uppercase;
-    animation: cycle 2s linear 0s infinite;
-}
-.namemm {
-    position: absolute;
-    line-height: 30px;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    color: var(--theme);
-    text-transform: uppercase;
-    animation: opacity 2s linear 0s infinite;
-}
-@keyframes cycle {
-    to {
-        transform: rotate(360deg);
-    }
-}
-@keyframes opacity {
-    50% {
-        opacity: 0;
-        letter-spacing: 10px;
-        line-height: 200%;
-    }
-}
+
 
 
 .nav-bar {

@@ -6,12 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wang Cheng Electronic Services Co. LTD | 旺诚电子服务有限公司</title>
     <link rel="stylesheet" href="style.css">
-
+    <style>
+        .preLoader {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: grid;
+            place-items: center;
+            background: white;
+            z-index: 10000000;
+            
+        }
+        .load {
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
+            border: 15px solid transparent;
+            border-top: 15px solid var(--theme);
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            color: var(--theme);
+            text-transform: uppercase;
+            animation: cycle 2s linear 0s infinite;
+        }
+        .namemm {
+            position: absolute;
+            line-height: 30px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            color: var(--theme);
+            text-transform: uppercase;
+            animation: opacity 2s linear 0s infinite;
+        }
+        @keyframes cycle {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes opacity {
+            50% {
+                opacity: 0;
+                letter-spacing: 10px;
+                line-height: 200%;
+            }
+        }
+    </style>
 
 </head>
 <body>
 
-    <div style="display: none;">
+    
+
+    <div class="preLoader">
+        <div class="load">
+            
+        </div>
+        <div class="namemm">
+            Wang <br> Cheng
+        </div>
+    </div>
+    <div class="display_none">
         <img src="./pic/aboutbg.jpg" alt="">
         <img src="./pic/bg.jpg" alt="">
         <img src="./pic/bg2.jpg" alt="">
@@ -21,15 +79,6 @@
         <img src="./pic/qa.jpg" alt="">
         <img src="./pic/qa2.webp" alt="">
         <img src="./pic/WhatsApp Image 2022-08-16 at 2.31.58 PM (1).jpeg" alt="">
-    </div>
-
-    <div class="preLoader">
-        <div class="load">
-            
-        </div>
-        <div class="namemm">
-            Wang <br> Cheng
-        </div>
     </div>
 
     <div class="nav-bar">
