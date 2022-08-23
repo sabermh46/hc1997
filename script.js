@@ -1,3 +1,5 @@
+
+
 window.addEventListener('DOMContentLoaded', ()=>{
 
     var preLoader = document.querySelector('.preLoader');
@@ -297,7 +299,7 @@ var languages =
                 },
                 body: {
                     en: 'Relevant materials, semi-finished products and finished products can be safely transported to the designated address and warehouse.',
-                    cn: '可以协助客户存储相关物料、、半成品、产品。（安全、方便、快捷、满足电子产品环境要求）'
+                    cn: '可以协助客户存储相关物料、半成品、产品。（安全、方便、快捷、满足电子产品环境要求）'
                 },
                 button: {
                     en: 'See More',
