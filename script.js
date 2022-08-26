@@ -91,7 +91,8 @@ var languages =
         headText: [
             {
                 en: 'Welcome to Wang Cheng Electronic Services',
-                cn: '欢迎来到旺成电子服务',
+                cn: '欢迎来到望诚电子服务',
+                
             }
         ],
         ptext: [

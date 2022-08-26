@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wang Cheng Electronic Services Co. LTD | 旺诚电子服务有限公司</title>
+    <title>Wang Cheng Electronic Services Co. LTD | 望诚电子服务有限公司</title>
     <link rel="stylesheet" href="style.css">
     <style>
         .preLoader {
@@ -13,6 +13,7 @@
             position: fixed;
             top: 0;
             left: 0;
+            display: -ms-grid;
             display: grid;
             place-items: center;
             background: white;
@@ -30,7 +31,8 @@
             font-weight: bold;
             color: var(--theme);
             text-transform: uppercase;
-            animation: cycle 2s linear 0s infinite;
+            -webkit-animation: cycle 2s linear 0s infinite;
+                    animation: cycle 2s linear 0s infinite;
         }
         .namemm {
             position: absolute;
@@ -40,11 +42,26 @@
             text-align: center;
             color: var(--theme);
             text-transform: uppercase;
-            animation: opacity 2s linear 0s infinite;
+            -webkit-animation: opacity 2s linear 0s infinite;
+                    animation: opacity 2s linear 0s infinite;
+        }
+        @-webkit-keyframes cycle {
+            to {
+                -webkit-transform: rotate(360deg);
+                        transform: rotate(360deg);
+            }
         }
         @keyframes cycle {
             to {
-                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                        transform: rotate(360deg);
+            }
+        }
+        @-webkit-keyframes opacity {
+            50% {
+                opacity: 0;
+                letter-spacing: 10px;
+                line-height: 200%;
             }
         }
         @keyframes opacity {
@@ -92,7 +109,7 @@
                     Electronic Services Co. LTD
                 </span>
                 <span class="dn2">
-                    旺诚电子服务有限公司
+                    望诚电子服务有限公司
                 </span>
             </div>
             <div class="item lang en for-mobile">
@@ -135,7 +152,7 @@
         </div>
     </div>
 
-    <div class="services" id="services">
+    <div class="services" id="services" style="background: -o-linear-gradient(40deg, #03010282, #c71e4000), url(./pic/bg2.jpg);background: linear-gradient(50deg, #03010282, #c71e4000), url(./pic/bg2.jpg);">
         <h1 class="osHead">Our Services</h1>
     </div>
 
