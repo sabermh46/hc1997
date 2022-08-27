@@ -90,15 +90,15 @@ var languages =
         ],
         headText: [
             {
-                en: 'Welcome to Wang Cheng Electronic Services',
-                cn: '欢迎来到望诚电子服务',
+                en: 'Welcome to Wang Cheng Electronic Services Co. LTD',
+                cn: '欢迎来到旺诚电子服务有限公司',
                 
             }
         ],
         ptext: [
             {
                 en: 'Wang Cheng Electronic Services Co. LTD was incorporated at HOUSE: #72 (3rd floor), ROAD: #12, D.I.T PROJECT, MERUL BADDA, GULSHAN, post coad: #1212 on June 18, 2022. The company mainly provides third-party inspection and materials for mobile phones, computers, tablets, electronic watches, TV sets and other products for major electronic product companies in and outside Bangladesh. Re-judgment, abnormal handling, transportation, warehousing, after-sales maintenance and other professional services of materials, semi-finished products and finished products; relying on good reputation and professional advantages, the company has established good cooperative relations with many large companies and multinational companies at home and abroad; Qualifications and Certificates Obtained have been applied for and passed ISO 9001 Quality Manual 2015, Lead Auditor Traning also ESD & Safety Management Workshop, which indicates that our company\'s operation system has met the international standard requirements of the industry, and it is also an effective guarantee for our company to provide perfect services to customers; the company\'s service area includes Bangladesh All regions in China and India; the company has established various functional departments with complete functions to provide efficient and professional services for all cooperative enterprises.',
-            cn: '望诚电子服务有限公司于2022年6月18日在HOUSE: #72 (3rd floor), ROAD: #12, D.I.T PROJECT, MERUL BADDA, GULSHAN, post coad: #1212注册成立。公司主要提供第三方服务为孟加拉国境内外各大电子产品公司提供手机、电脑、平板电脑、电子手表、电视机等产品的检测和材料。材料、半成品、成品的重新判断、异常处理、运输、仓储、售后维修等专业服务；公司凭借良好的信誉和专业优势，与国内外多家大公司、跨国公司建立了良好的合作关系；获得的资质证书已申请并通过 ISO 9001 Quality Manual 2015, Lead Auditor Traning also ESD & Safety Management Workshop，这表明我公司的运营体系已达到行业国际标准要求，也是我公司提供完善的有效保障为客户提供服务；公司服务区域包括孟加拉中国和印度的所有地区；公司设立了功能齐全的各职能部门，为各合作企业提供高效、专业的服务。',
+            cn: '旺诚电子服务有限公司于2022年6月18日在HOUSE: #72 (3rd floor), ROAD: #12, D.I.T PROJECT, MERUL BADDA, GULSHAN, post coad: #1212注册成立。公司主要提供第三方服务为孟加拉国境内外各大电子产品公司提供手机、电脑、平板电脑、电子手表、电视机等产品的检测和材料。材料、半成品、成品的重新判断、异常处理、运输、仓储、售后维修等专业服务；公司凭借良好的信誉和专业优势，与国内外多家大公司、跨国公司建立了良好的合作关系；获得的资质证书已申请并通过 ISO 9001 Quality Manual 2015, Lead Auditor Traning also ESD & Safety Management Workshop，这表明我公司的运营体系已达到行业国际标准要求，也是我公司提供完善的有效保障为客户提供服务；公司服务区域包括孟加拉中国和印度的所有地区；公司设立了功能齐全的各职能部门，为各合作企业提供高效、专业的服务。',
             }
         ],
         aboutUs: [
@@ -108,8 +108,8 @@ var languages =
                     cn: '关于我们'
                 },
                 companyName: {
-                    en: 'Wang Cheng Electronic Services',
-                    cn: '望诚电子服务'
+                    en: 'Wang Cheng Electronic Services Co. LTD',
+                    cn: '旺诚电子服务有限公司'
                 },
                 established: {
                     en: '2nd February, 2022',
