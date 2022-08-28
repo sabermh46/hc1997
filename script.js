@@ -181,7 +181,7 @@ var languages =
                         },
                         {
                             en: '#Vibrant (Nokia)',
-                            cn: '#充满活力'
+                            cn: '#诺基亚'
                         },
                         {
                             en: '#OPPO',
