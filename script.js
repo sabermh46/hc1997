@@ -176,7 +176,7 @@ var languages =
                             cn: '#传音控股有限公司'
                         },
                         {
-                            en: '#Samsang(FEL).',
+                            en: '#Samsang(FEL)',
                             cn: '#三星'
                         },
                         {
@@ -204,7 +204,7 @@ var languages =
                             cn: '#小米'
                         },
                         {
-                            en: '#ZX.',
+                            en: '#ZX',
                             cn: '#中显'
                         },
                         {
@@ -220,11 +220,11 @@ var languages =
                             cn: '#光弘'
                         },
                         {
-                            en: '#Tinno.',
-                            cn: '#蒂诺。'
+                            en: '#Tinno',
+                            cn: '#天诺'
                         },
                         {
-                            en: '#Wingtake.',
+                            en: '#Wingtake',
                             cn: '#闻泰'
                         },
                     ],
